@@ -9,13 +9,16 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.0.5",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "lucide-react": "^0.557.0",
+    "marked": "^12.0.0",
+    "next": "^16.0.8",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/marked": "4.0.0",
+    "@types/node": "^24.10.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
