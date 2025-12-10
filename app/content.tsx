@@ -173,7 +173,7 @@ const EditorContent: React.FC = () => {
 
     return (
         <div className={`flex flex-col h-full border-t ${isDark ? "border-gray-700" : "border-gray-200"}`}>
-            <div className={`md:hidden flex border-b flex-shrink-0 ${isDark ? "border-gray-700 bg-gray-800" : "border-gray-200 bg-gray-50"}`}>
+            <div className={`md:hidden flex border-b shrink-0 ${isDark ? "border-gray-700 bg-gray-800" : "border-gray-200 bg-gray-50"}`}>
                 <button
                     onClick={() => setActiveTab("editor")}
                     className={`flex-1 flex items-center justify-center py-3 px-4 text-sm font-medium transition-all duration-200 ${
@@ -220,7 +220,7 @@ const EditorContent: React.FC = () => {
                 </div>
                 {/* Resize handle */}
                 <div
-                    className={`w-1 bg-gradient-to-b from-blue-500 to-purple-500 cursor-col-resize hover:w-2 transition-all duration-200 flex-shrink-0 ${
+                    className={`w-1 bg-linear-to-b from-blue-500 to-purple-500 cursor-col-resize hover:w-2 transition-all duration-200 shrink-0 ${
                         isResizing ? "w-2" : ""
                     }`}
                     onMouseDown={(e) => {

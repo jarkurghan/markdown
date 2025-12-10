@@ -154,10 +154,10 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
             <article className={`max-w-4xl mx-auto p-8 ${isDark ? "text-gray-100" : "text-gray-900"}`}>
                 {/* Hero Section */}
                 <header className="text-center mb-16">
-                    <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 mb-8 shadow-2xl">
+                    <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-linear-to-r from-blue-500 to-purple-500 mb-8 shadow-2xl">
                         <FileText className="w-12 h-12 text-white" />
                     </div>
-                    <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-tight">
+                    <h1 className="text-6xl font-bold mb-6 bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-tight">
                         What is Markdown?
                     </h1>
                     <p className={`text-xl leading-relaxed max-w-3xl mx-auto ${isDark ? "text-gray-300" : "text-gray-600"}`}>
@@ -171,8 +171,8 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
                     <div
                         className={`p-8 rounded-2xl border ${
                             isDark
-                                ? "bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-500/30"
-                                : "bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200"
+                                ? "bg-linear-to-r from-blue-900/20 to-purple-900/20 border-blue-500/30"
+                                : "bg-linear-to-r from-blue-50 to-purple-50 border-blue-200"
                         } mb-12`}
                     >
                         <h2 className={`text-3xl font-bold mb-6 ${isDark ? "text-white" : "text-gray-900"}`}>The Story Behind Markdown</h2>
@@ -205,8 +205,8 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
                                     isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"
                                 } hover:shadow-lg transition-all duration-300`}
                             >
-                                <div className="flex-shrink-0">
-                                    <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm">
+                                <div className="shrink-0">
+                                    <div className="w-16 h-16 rounded-full bg-linear-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm">
                                         {item.year}
                                     </div>
                                 </div>
@@ -231,7 +231,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
                                 } hover:shadow-lg transition-all duration-300 hover:scale-105`}
                             >
                                 <div className="flex items-center mb-4">
-                                    <div className="p-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 mr-4">
+                                    <div className="p-3 rounded-lg bg-linear-to-r from-blue-500 to-purple-500 mr-4">
                                         <advantage.icon className="w-6 h-6 text-white" />
                                     </div>
                                     <h3 className={`text-lg font-semibold ${isDark ? "text-white" : "text-gray-900"}`}>{advantage.title}</h3>
@@ -254,7 +254,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
                                 } hover:shadow-lg transition-all duration-300`}
                             >
                                 <div className="flex items-center mb-6">
-                                    <div className="p-4 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 mr-4">
+                                    <div className="p-4 rounded-lg bg-linear-to-r from-blue-500 to-purple-500 mr-4">
                                         <useCase.icon className="w-8 h-8 text-white" />
                                     </div>
                                     <h3 className={`text-2xl font-semibold ${isDark ? "text-white" : "text-gray-900"}`}>{useCase.title}</h3>
@@ -288,7 +288,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
                                 } hover:shadow-lg transition-all duration-300`}
                             >
                                 <div className="flex items-center mb-4">
-                                    <div className="p-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 mr-4">
+                                    <div className="p-3 rounded-lg bg-linear-to-r from-blue-500 to-purple-500 mr-4">
                                         <example.icon className="w-6 h-6 text-white" />
                                     </div>
                                     <h3 className={`text-xl font-semibold ${isDark ? "text-white" : "text-gray-900"}`}>{example.title}</h3>
@@ -376,8 +376,8 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
                 <section
                     className={`p-8 rounded-2xl border ${
                         isDark
-                            ? "bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-500/30"
-                            : "bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200"
+                            ? "bg-linear-to-r from-blue-900/20 to-purple-900/20 border-blue-500/30"
+                            : "bg-linear-to-r from-blue-50 to-purple-50 border-blue-200"
                     } text-center`}
                 >
                     <h2 className={`text-3xl font-bold mb-6 ${isDark ? "text-white" : "text-gray-900"}`}>Ready to Start Your Markdown Journey?</h2>

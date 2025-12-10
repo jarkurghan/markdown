@@ -100,11 +100,11 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, currentPage }) =
             >
                 <div className="flex items-center justify-between px-6 py-3">
                     <button onClick={navigateToHome} className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
-                        <div className="p-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500">
+                        <div className="p-2 rounded-xl bg-linear-to-r from-blue-500 to-purple-500">
                             <FileText className="w-5 h-5 text-white" />
                         </div>
 
-                        <h1 className={`text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent hidden sm:block`}>
+                        <h1 className={`text-lg font-bold bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent hidden sm:block`}>
                             Markdown editor
                         </h1>
                     </button>
@@ -171,7 +171,7 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, currentPage }) =
                         isToolbarOpen ? "translate-x-0" : "translate-x-full"
                     } ${isDark ? "bg-gray-800" : "bg-white"} border-l ${isDark ? "border-gray-700" : "border-gray-200"} shadow-2xl flex flex-col`}
                 >
-                    <div className={`flex items-center justify-between p-4 border-b ${isDark ? "border-gray-700" : "border-gray-200"} flex-shrink-0`}>
+                    <div className={`flex items-center justify-between p-4 border-b ${isDark ? "border-gray-700" : "border-gray-200"} shrink-0`}>
                           <h2 className={`text-base font-semibold ${isDark ? "text-white" : "text-gray-900"}`}>Formatting Tools </h2> 
                         <button
                             onClick={() => setIsToolbarOpen(false)}
@@ -209,7 +209,7 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, currentPage }) =
                     isSidebarOpen ? "translate-x-0" : "translate-x-full"
                 } ${isDark ? "bg-gray-800" : "bg-white"} border-l ${isDark ? "border-gray-700" : "border-gray-200"} shadow-2xl flex flex-col`}
             >
-                <div className={`flex items-center justify-between p-4 border-b ${isDark ? "border-gray-700" : "border-gray-200"} flex-shrink-0`}>
+                <div className={`flex items-center justify-between p-4 border-b ${isDark ? "border-gray-700" : "border-gray-200"} shrink-0`}>
                     <h2 className={`text-base font-semibold ${isDark ? "text-white" : "text-gray-900"}`}>Menu </h2>
                     <button
                         onClick={() => setIsSidebarOpen(false)}
