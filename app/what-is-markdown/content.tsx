@@ -3,11 +3,10 @@ import { Zap, Globe, Users, BookOpen, Lightbulb, Target, Clock, Star } from "luc
 import { FileText, Code, Bold, Italic, Link, List, Image, Quote, Hash, Table, CheckSquare } from "lucide-react";
 
 interface WhatIsMarkdownProps {
-    isDark: boolean;
     isFullscreen: boolean;
 }
 
-const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscreen }) => {
+const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isFullscreen }) => {
     const examples = [
         {
             title: "Headers",
@@ -169,16 +168,12 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
                 {/* Introduction */}
                 <section className="mb-16">
                     <div
-                        className={`p-8 rounded-2xl border ${
-                            isDark
-                                ? "bg-linear-to-r from-blue-900/20 to-purple-900/20 border-blue-500/30"
-                                : "bg-linear-to-r from-blue-50 to-purple-50 border-blue-200"
-                        } mb-12`}
+                        className={`p-8 rounded-2xl border special-1 mb-12`}
                     >
                         <h2 className={`text-3xl font-bold mb-6 text-gray-7`}>The Story Behind Markdown</h2>
                         <div className={`prose prose-lg max-w-none text-gray-3`}>
                             <p className="mb-4">
-                                Markdown was created in 2004 by <strong>John Gruber</strong> in collaboration with Aaron Swartz. The goal was simple yet
+                                Markdown was created in 2004 by <b>John Gruber</b> in collaboration with Aaron Swartz. The goal was simple yet
                                 revolutionary: create a way to write using an easy-to-read, easy-to-write plain text format that could be converted to
                                 structurally valid HTML.
                             </p>
@@ -201,9 +196,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
                         {history.map((item, index) => (
                             <div
                                 key={index}
-                                className={`flex items-start space-x-6 p-6 rounded-xl border ${
-                                    isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"
-                                } hover:shadow-lg transition-all duration-300`}
+                                className={`flex items-start space-x-6 p-6 rounded-xl border bg-color-3 bor-col-1 hover:shadow-lg transition-all duration-300`}
                             >
                                 <div className="shrink-0">
                                     <div className="w-16 h-16 rounded-full bg-linear-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm">
@@ -226,9 +219,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
                         {advantages.map((advantage, index) => (
                             <div
                                 key={index}
-                                className={`p-6 rounded-xl border ${
-                                    isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"
-                                } hover:shadow-lg transition-all duration-300 hover:scale-105`}
+                                className={`p-6 rounded-xl border bg-color-3 bor-col-1 hover:shadow-lg transition-all duration-300 hover:scale-105`}
                             >
                                 <div className="flex items-center mb-4">
                                     <div className="p-3 rounded-lg bg-linear-to-r from-blue-500 to-purple-500 mr-4">
@@ -247,12 +238,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
                     <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Where Markdown Shines</h2>
                     <div className="grid md:grid-cols-2 gap-8">
                         {useCases.map((useCase, index) => (
-                            <div
-                                key={index}
-                                className={`p-8 rounded-xl border ${
-                                    isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"
-                                } hover:shadow-lg transition-all duration-300`}
-                            >
+                            <div key={index} className={`p-8 rounded-xl border bg-color-3 bor-col-1 hover:shadow-lg transition-all duration-300`}>
                                 <div className="flex items-center mb-6">
                                     <div className="p-4 rounded-lg bg-linear-to-r from-blue-500 to-purple-500 mr-4">
                                         <useCase.icon className="w-8 h-8 text-white" />
@@ -281,12 +267,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
                     </p>
                     <div className="grid lg:grid-cols-2 gap-8">
                         {examples.map((example, index) => (
-                            <div
-                                key={index}
-                                className={`p-6 rounded-xl border ${
-                                    isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"
-                                } hover:shadow-lg transition-all duration-300`}
-                            >
+                            <div key={index} className={`p-6 rounded-xl border bg-color-3 bor-col-1 hover:shadow-lg transition-all duration-300`}>
                                 <div className="flex items-center mb-4">
                                     <div className="p-3 rounded-lg bg-linear-to-r from-blue-500 to-purple-500 mr-4">
                                         <example.icon className="w-6 h-6 text-white" />
@@ -295,9 +276,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
                                 </div>
                                 <p className={`text-sm mb-4 text-gray-1`}>{example.description}</p>
                                 <div
-                                    className={`p-4 rounded-lg font-mono text-sm overflow-x-auto text-gray-4 ${
-                                        isDark ? "bg-gray-900 border border-gray-700" : "bg-gray-50 border border-gray-200"
-                                    }`}
+                                    className={`p-4 rounded-lg font-mono text-sm overflow-x-auto text-gray-4 bg-color-6 border bor-col-1`}
                                 >
                                     <pre className="whitespace-pre-wrap">{example.markdown}</pre>
                                 </div>
@@ -309,7 +288,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
                 {/* Best Practices */}
                 <section className="mb-16">
                     <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Best Practices & Tips</h2>
-                    <div className={`p-8 rounded-xl border ${isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"}`}>
+                    <div className={`p-8 rounded-xl border bg-color-3 bor-col-1`}>
                         <div className="grid md:grid-cols-2 gap-8">
                             <div>
                                 <h3 className={`text-xl font-semibold mb-4 text-green-500`}>✅ Do This</h3>
@@ -352,16 +331,9 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
                             { name: "GitBook", description: "Documentation platform", category: "Documentation" },
                             { name: "Hugo", description: "Fast static site generator", category: "Generator" },
                         ].map((tool, index) => (
-                            <div
-                                key={index}
-                                className={`p-6 rounded-xl border ${
-                                    isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"
-                                } hover:shadow-lg transition-all duration-300`}
-                            >
+                            <div key={index} className={`p-6 rounded-xl border bg-color-3 bor-col-1 hover:shadow-lg transition-all duration-300`}>
                                 <div
-                                    className={`text-xs font-semibold mb-2 px-2 py-1 rounded-full inline-block ${
-                                        isDark ? "bg-blue-900/50 text-blue-300" : "bg-blue-100 text-blue-700"
-                                    }`}
+                                    className={`text-xs font-semibold mb-2 px-2 py-1 rounded-full inline-block bg-color-9 text-blue-11`}
                                 >
                                     {tool.category}
                                 </div>
@@ -374,11 +346,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
 
                 {/* Call to Action */}
                 <section
-                    className={`p-8 rounded-2xl border ${
-                        isDark
-                            ? "bg-linear-to-r from-blue-900/20 to-purple-900/20 border-blue-500/30"
-                            : "bg-linear-to-r from-blue-50 to-purple-50 border-blue-200"
-                    } text-center`}
+                    className={`p-8 rounded-2xl border special-1 text-center`}
                 >
                     <h2 className={`text-3xl font-bold mb-6 text-gray-7`}>Ready to Start Your Markdown Journey?</h2>
                     <p className={`text-lg mb-8 max-w-2xl mx-auto text-gray-1`}>
@@ -386,34 +354,20 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isDark, isFullscree
                         creating your first Markdown document with confidence!
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 mb-8">
-                        <div
-                            className={`px-6 py-3 rounded-lg text-gray-3 ${isDark ? "bg-gray-800" : "bg-white"} border ${
-                                isDark ? "border-gray-700" : "border-gray-200"
-                            } shadow-sm`}
-                        >
+                        <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
                             <span className="font-mono text-sm font-semibold">Ctrl/Cmd + B</span>
                             <span className="ml-2">Bold</span>
                         </div>
-                        <div
-                            className={`px-6 py-3 rounded-lg text-gray-3 ${isDark ? "bg-gray-800" : "bg-white"} border ${
-                                isDark ? "border-gray-700" : "border-gray-200"
-                            } shadow-sm`}
-                        >
+                        <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
                             <span className="font-mono text-sm font-semibold">Ctrl/Cmd + I</span>
                             <span className="ml-2">Italic</span>
                         </div>
-                        <div
-                            className={`px-6 py-3 rounded-lg text-gray-3 ${isDark ? "bg-gray-800" : "bg-white"} border ${
-                                isDark ? "border-gray-700" : "border-gray-200"
-                            } shadow-sm`}
-                        >
+                        <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
                             <span className="font-mono text-sm font-semibold">Ctrl/Cmd + K</span>
                             <span className="ml-2">Link</span>
                         </div>
                     </div>
-                    <div className={`text-sm text-gray-9`}>
-                        💡 Pro tip: Use our formatting toolbar for quick access to all Markdown syntax options!
-                    </div>
+                    <div className={`text-sm text-gray-9`}>💡 Pro tip: Use our formatting toolbar for quick access to all Markdown syntax options!</div>
                 </section>
             </article>
         </div>

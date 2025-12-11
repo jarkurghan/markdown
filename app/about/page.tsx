@@ -3,11 +3,10 @@ import { FileText, Code, Zap, Heart, Github, Star, Users, Download, Globe, Smart
 import { Monitor, Palette, Shield, Clock, Lightbulb, Target, Rocket, Award, Coffee, BookOpen, Settings } from "lucide-react";
 
 interface AboutProps {
-    isDark: boolean;
     isFullscreen: boolean;
 }
 
-const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
+const About: React.FC<AboutProps> = ({ isFullscreen }) => {
     const features = [
         {
             icon: Zap,
@@ -134,11 +133,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                 {/* Mission Statement */}
                 <section className="mb-16">
                     <div
-                        className={`p-8 rounded-2xl border ${
-                            isDark
-                                ? "bg-linear-to-r from-blue-900/20 to-purple-900/20 border-blue-500/30"
-                                : "bg-linear-to-r from-blue-50 to-purple-50 border-blue-200"
-                        } mb-12`}
+                        className={`p-8 rounded-2xl border special-1 mb-12`}
                     >
                         <div className="flex items-center mb-6">
                             <Target className="w-8 h-8 text-blue-500 mr-4" />
@@ -146,7 +141,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                         </div>
                         <div className={`prose prose-lg max-w-none text-gray-3`}>
                             <p className="mb-4">
-                                We believe that great writing tools should be <strong>beautiful</strong>, <strong>fast</strong>, and <strong>accessible</strong>
+                                We believe that great writing tools should be <b>beautiful</b>, <b>fast</b>, and <b>accessible</b>
                                 . Markdown editor was born from the frustration with existing markdown editors that compromise on either functionality or user
                                 experience.
                             </p>
@@ -155,8 +150,8 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                                 elegance that makes markdown so appealing in the first place.
                             </p>
                             <p>
-                                Whether you're writing documentation, blog posts, or taking notes, Markdown editor adapts to your workflow and helps you focus on
-                                what matters most: <em>your content</em>.
+                                Whether you're writing documentation, blog posts, or taking notes, Markdown editor adapts to your workflow and helps you focus
+                                on what matters most: <em>your content</em>.
                             </p>
                         </div>
                     </div>
@@ -169,9 +164,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                         {features.map((feature, index) => (
                             <div
                                 key={index}
-                                className={`p-6 rounded-xl border ${
-                                    isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"
-                                } hover:shadow-lg transition-all duration-300 hover:scale-105`}
+                                className={`p-6 rounded-xl border bg-color-3 bor-col-1 hover:shadow-lg transition-all duration-300 hover:scale-105`}
                             >
                                 <div className="flex items-center mb-4">
                                     <div className="p-3 rounded-lg bg-linear-to-r from-blue-500 to-purple-500 mr-4">
@@ -190,12 +183,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                     <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Built for Performance</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {stats.map((stat, index) => (
-                            <div
-                                key={index}
-                                className={`p-6 rounded-xl border text-center ${
-                                    isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"
-                                } hover:shadow-lg transition-all duration-300`}
-                            >
+                            <div key={index} className={`p-6 rounded-xl border text-center bg-color-3 bor-col-1 hover:shadow-lg transition-all duration-300`}>
                                 <div className="flex justify-center mb-4">
                                     <div className="p-3 rounded-lg bg-linear-to-r from-blue-500 to-purple-500">
                                         <stat.icon className="w-6 h-6 text-white" />
@@ -215,12 +203,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                     <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Built with Modern Technologies</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {technologies.map((tech, index) => (
-                            <div
-                                key={index}
-                                className={`p-6 rounded-xl border ${
-                                    isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"
-                                } hover:shadow-lg transition-all duration-300`}
-                            >
+                            <div key={index} className={`p-6 rounded-xl border bg-color-3 bor-col-1 hover:shadow-lg transition-all duration-300`}>
                                 <div className="flex items-center mb-4">
                                     <div className="text-3xl mr-4">{tech.icon}</div>
                                     <h3 className={`text-lg font-semibold text-gray-7`}>{tech.name}</h3>
@@ -238,9 +221,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                         {roadmap.map((item, index) => (
                             <div
                                 key={index}
-                                className={`flex items-start space-x-6 p-6 rounded-xl border ${
-                                    isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"
-                                } hover:shadow-lg transition-all duration-300`}
+                                className={`flex items-start space-x-6 p-6 rounded-xl border bg-color-3 bor-col-1 hover:shadow-lg transition-all duration-300`}
                             >
                                 <div className="shrink-0">
                                     <div
@@ -277,14 +258,14 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                 <section className="mb-16">
                     <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Our Design Philosophy</h2>
                     <div className="grid md:grid-cols-2 gap-8">
-                        <div className={`p-8 rounded-xl border ${isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"}`}>
+                        <div className={`p-8 rounded-xl border bg-color-3 bor-col-1`}>
                             <div className="flex items-center mb-6">
                                 <Lightbulb className="w-8 h-8 text-yellow-500 mr-4" />
                                 <h3 className={`text-2xl font-semibold text-gray-7`}>Simplicity First</h3>
                             </div>
                             <p className={`text-lg mb-4 text-gray-1`}>
-                                We believe that the best tools are invisible. Markdown editor gets out of your way and lets you focus on writing, not fighting with
-                                the interface.
+                                We believe that the best tools are invisible. Markdown editor gets out of your way and lets you focus on writing, not fighting
+                                with the interface.
                             </p>
                             <ul className={`space-y-2 text-gray-9`}>
                                 <li>• Clean, distraction-free interface</li>
@@ -294,7 +275,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                             </ul>
                         </div>
 
-                        <div className={`p-8 rounded-xl border ${isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"}`}>
+                        <div className={`p-8 rounded-xl border bg-color-3 bor-col-1`}>
                             <div className="flex items-center mb-6">
                                 <Rocket className="w-8 h-8 text-blue-500 mr-4" />
                                 <h3 className={`text-2xl font-semibold text-gray-7`}>Performance Matters</h3>
@@ -316,7 +297,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                 {/* Team & Credits */}
                 <section className="mb-16">
                     <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Built with ❤️</h2>
-                    <div className={`p-8 rounded-xl border text-center ${isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"}`}>
+                    <div className={`p-8 rounded-xl border text-center bg-color-3 bor-col-1`}>
                         <div className="flex justify-center mb-6">
                             <div className="p-4 rounded-full bg-linear-to-r from-pink-500 to-red-500">
                                 <Heart className="w-8 h-8 text-white" />
@@ -324,19 +305,19 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                         </div>
                         <h3 className={`text-2xl font-semibold mb-4 text-gray-7`}>Crafted with Passion</h3>
                         <p className={`text-lg mb-6 max-w-2xl mx-auto text-gray-1`}>
-                            Markdown editor is developed by passionate developers who believe in creating tools that make a difference in people's daily workflows.
-                            Every feature is carefully considered and implemented with attention to detail.
+                            Markdown editor is developed by passionate developers who believe in creating tools that make a difference in people's daily
+                            workflows. Every feature is carefully considered and implemented with attention to detail.
                         </p>
                         <div className="flex justify-center space-x-6">
-                            <div className={`flex items-center px-4 py-2 rounded-lg ${isDark ? "bg-gray-700" : "bg-gray-100"}`}>
+                            <div className={`flex items-center px-4 py-2 rounded-lg bg-color-7`}>
                                 <Coffee className="w-5 h-5 mr-2 text-amber-500" />
                                 <span className={`text-sm text-gray-3`}>Fueled by coffee</span>
                             </div>
-                            <div className={`flex items-center px-4 py-2 rounded-lg ${isDark ? "bg-gray-700" : "bg-gray-100"}`}>
+                            <div className={`flex items-center px-4 py-2 rounded-lg bg-color-7`}>
                                 <Code className="w-5 h-5 mr-2 text-blue-500" />
                                 <span className={`text-sm text-gray-3`}>Open source</span>
                             </div>
-                            <div className={`flex items-center px-4 py-2 rounded-lg ${isDark ? "bg-gray-700" : "bg-gray-100"}`}>
+                            <div className={`flex items-center px-4 py-2 rounded-lg bg-color-7`}>
                                 <Users className="w-5 h-5 mr-2 text-green-500" />
                                 <span className={`text-sm text-gray-3`}>Community driven</span>
                             </div>
@@ -346,11 +327,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
 
                 {/* Call to Action */}
                 <section
-                    className={`p-8 rounded-2xl border ${
-                        isDark
-                            ? "bg-linear-to-r from-blue-900/20 to-purple-900/20 border-blue-500/30"
-                            : "bg-linear-to-r from-blue-50 to-purple-50 border-blue-200"
-                    } text-center`}
+                    className={`p-8 rounded-2xl border special-1 text-center`}
                 >
                     <h2 className={`text-3xl font-bold mb-6 text-gray-7`}>Ready to Transform Your Writing?</h2>
                     <p className={`text-lg mb-8 max-w-2xl mx-auto text-gray-1`}>
@@ -358,27 +335,15 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                         difference that thoughtful design and cutting-edge technology can make in your daily workflow.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 mb-8">
-                        <div
-                            className={`px-6 py-3 rounded-lg text-gray-3 ${isDark ? "bg-gray-800" : "bg-white"} border ${
-                                isDark ? "border-gray-700" : "border-gray-200"
-                            } shadow-sm`}
-                        >
+                        <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
                             <Award className="w-5 h-5 inline mr-2 text-yellow-500" />
                             <span className="font-semibold">Production Ready</span>
                         </div>
-                        <div
-                            className={`px-6 py-3 rounded-lg text-gray-3 ${isDark ? "bg-gray-800" : "bg-white"} border ${
-                                isDark ? "border-gray-700" : "border-gray-200"
-                            } shadow-sm`}
-                        >
+                        <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
                             <Shield className="w-5 h-5 inline mr-2 text-green-500" />
                             <span className="font-semibold">Privacy Focused</span>
                         </div>
-                        <div
-                            className={`px-6 py-3 rounded-lg text-gray-3 ${isDark ? "bg-gray-800" : "bg-white"} border ${
-                                isDark ? "border-gray-700" : "border-gray-200"
-                            } shadow-sm`}
-                        >
+                        <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
                             <Star className="w-5 h-5 inline mr-2 text-purple-500" />
                             <span className="font-semibold">Always Free</span>
                         </div>

@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useTheme } from "@/contexts/theme-context";
 import { usePathname } from "next/navigation";
 import Header from "./header";
-import { useTheme } from "@/contexts/theme-context";
 
 interface MainLayoutProps {
     children: React.ReactNode;
@@ -11,27 +11,7 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     const { theme, toggleTheme } = useTheme();
-    const [isDark, setIsDark] = useState(true);
     const pathname = usePathname();
-
-    useEffect(() => {
-        const savedTheme = localStorage.getItem("markedit-theme");
-        if (savedTheme) {
-            const isDarkTheme = savedTheme === "dark";
-            setIsDark(isDarkTheme);
-            document.documentElement.classList.toggle("dark", isDarkTheme);
-        } else {
-            document.documentElement.classList.toggle("dark", isDark);
-        }
-    }, []);
-
-    const toggleTheme2 = () => {
-        const newTheme = !isDark;
-        setIsDark(newTheme);
-
-        document.documentElement.classList.toggle("dark", newTheme);
-        localStorage.setItem("markedit-theme", newTheme ? "dark" : "light");
-    };
 
     const getCurrentPage = () => {
         if (pathname === "/what-is-markdown") return "what-is-markdown";
@@ -43,9 +23,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     const currentPage = getCurrentPage();
 
     return (
-        <div className={`h-screen overflow-hidden ${isDark ? "dark bg-gray-900" : "bg-gray-50"} transition-colors duration-300`}>
-            <Header isDark={isDark} onToggleTheme={toggleTheme} currentPage={currentPage} />
-
+        <div className={`h-screen overflow-hidden bg-color-6 transition-colors duration-300`}>
+            <Header onToggleTheme={toggleTheme} currentPage={currentPage} theme={theme} />
             <main className="h-full pt-16 transition-all duration-300">{children}</main>
         </div>
     );

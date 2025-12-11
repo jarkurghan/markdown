@@ -6,13 +6,6 @@ import Editor from "./editor";
 import Preview from "./preview";
 import { Edit3, Eye } from "lucide-react";
 
-const getInitialTheme = (): boolean => {
-    if (typeof window !== "undefined") {
-        return localStorage.getItem("markedit-theme") === "dark";
-    }
-    return true;
-};
-
 const INITIAL_MARKDOWN = `# Welcome to Markdown editor
 
 A **beautiful** and *powerful* markdown editor built with React and TypeScript.
@@ -57,20 +50,6 @@ function hello() {
 `;
 
 const EditorContent: React.FC = () => {
-    const [isDark, setIsDark] = useState(getInitialTheme);
-
-    useEffect(() => {
-        const handleThemeChange = () => {
-            setIsDark(getInitialTheme());
-        };
-
-        window.addEventListener("markedit-theme-change", handleThemeChange);
-
-        return () => {
-            window.removeEventListener("markedit-theme-change", handleThemeChange);
-        };
-    }, []);
-
     const [markdown, setMarkdown] = useState(INITIAL_MARKDOWN);
     const [splitRatio, setSplitRatio] = useState(50);
     const [isResizing, setIsResizing] = useState(false);
@@ -172,16 +151,12 @@ const EditorContent: React.FC = () => {
     }, [insertMarkdown]);
 
     return (
-        <div className={`flex flex-col h-full border-t ${isDark ? "border-gray-700" : "border-gray-200"}`}>
-            <div className={`md:hidden flex border-b shrink-0 ${isDark ? "border-gray-700 bg-gray-800" : "border-gray-200 bg-gray-50"}`}>
+        <div className={`flex flex-col h-full border-t bor-col-1`}>
+            <div className={`md:hidden flex border-b shrink-0 bg-color-1 bor-col-1`}>
                 <button
                     onClick={() => setActiveTab("editor")}
                     className={`flex-1 flex items-center justify-center py-3 px-4 text-sm font-medium transition-all duration-200 ${
-                        activeTab === "editor"
-                            ? isDark
-                                ? "bg-gray-900 text-blue-400 border-b-2 border-blue-400"
-                                : "bg-white text-blue-600 border-b-2 border-blue-600"
-                            : "text-gray-2"
+                        activeTab === "editor" ? "bg-color-5 special-2" : "text-gray-2 text-gray-10"
                     }`}
                 >
                     <Edit3 className="w-4 h-4 mr-2" />
@@ -190,11 +165,7 @@ const EditorContent: React.FC = () => {
                 <button
                     onClick={() => setActiveTab("preview")}
                     className={`flex-1 flex items-center justify-center py-3 px-4 text-sm font-medium transition-all duration-200 ${
-                        activeTab === "preview"
-                            ? isDark
-                                ? "bg-gray-900 text-blue-400 border-b-2 border-blue-400"
-                                : "bg-white text-blue-600 border-b-2 border-blue-600"
-                            : "text-gray-2"
+                        activeTab === "preview" ? "bg-color-5 special-2" : "text-gray-2 text-gray-10"
                     }`}
                 >
                     <Eye className="w-4 h-4 mr-2" /> Preview
@@ -202,16 +173,12 @@ const EditorContent: React.FC = () => {
             </div>
             <div className="md:hidden flex-1 min-h-0 overflow-hidden">
                 <div className="h-full">
-                    {activeTab === "editor" ? (
-                        <Editor ref={editorRef} value={markdown} onChange={setMarkdown} isDark={isDark} />
-                    ) : (
-                        <Preview markdown={markdown} isDark={isDark} />
-                    )}
+                    {activeTab === "editor" ? <Editor ref={editorRef} value={markdown} onChange={setMarkdown} /> : <Preview markdown={markdown} />}
                 </div>
             </div>
             <div className="hidden md:flex flex-1 min-h-0">
                 <div className="flex-1 flex min-w-0" style={{ flexBasis: `${splitRatio}%` }}>
-                    <Editor ref={editorRef} value={markdown} onChange={setMarkdown} isDark={isDark} />
+                    <Editor ref={editorRef} value={markdown} onChange={setMarkdown} />
                 </div>
                 {/* Resize handle */}
                 <div
@@ -238,7 +205,7 @@ const EditorContent: React.FC = () => {
                     }}
                 />
                 <div className="flex-1 min-w-0" style={{ flexBasis: `${100 - splitRatio}%` }}>
-                    <Preview markdown={markdown} isDark={isDark} />
+                    <Preview markdown={markdown} />
                 </div>
             </div>
         </div>
