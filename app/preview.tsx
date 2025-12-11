@@ -21,7 +21,7 @@ const Preview: React.FC<PreviewProps> = ({ markdown, isDark }) => {
     return (
         <div className="flex-1 flex flex-col h-full">
             <div className={`px-4 py-2 border-b shrink-0 ${isDark ? "border-gray-700 bg-gray-800" : "border-gray-200 bg-gray-50"}`}>
-                <h3 className={`text-sm font-medium ${isDark ? "text-gray-300" : "text-gray-700"}`}>Preview</h3>
+                <h3 className={`text-sm font-medium text-gray-3`}>Preview</h3>
             </div>
             <div className={`flex-1 overflow-y-auto ${isDark ? "bg-gray-900" : "bg-white"} transition-colors duration-300`}>
                 <div

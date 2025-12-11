@@ -181,13 +181,10 @@ const EditorContent: React.FC = () => {
                             ? isDark
                                 ? "bg-gray-900 text-blue-400 border-b-2 border-blue-400"
                                 : "bg-white text-blue-600 border-b-2 border-blue-600"
-                            : isDark
-                            ? "text-gray-400 hover:text-gray-300"
-                            : "text-gray-600 hover:text-gray-900"
+                            : "text-gray-2"
                     }`}
-                    
                 >
-                    <Edit3 className="w-4 h-4 mr-2"  /> 
+                    <Edit3 className="w-4 h-4 mr-2" />
                     Editor
                 </button>
                 <button
@@ -197,9 +194,7 @@ const EditorContent: React.FC = () => {
                             ? isDark
                                 ? "bg-gray-900 text-blue-400 border-b-2 border-blue-400"
                                 : "bg-white text-blue-600 border-b-2 border-blue-600"
-                            : isDark
-                            ? "text-gray-400 hover:text-gray-300"
-                            : "text-gray-600 hover:text-gray-900"
+                            : "text-gray-2"
                     }`}
                 >
                     <Eye className="w-4 h-4 mr-2" /> Preview

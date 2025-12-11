@@ -116,16 +116,16 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
 
     return (
         <div className={`h-full overflow-y-auto ${isFullscreen ? "pt-0" : "pt-16"} transition-all duration-300`}>
-            <article className={`max-w-4xl mx-auto p-8 ${isDark ? "text-gray-100" : "text-gray-900"}`}>
+            <article className={`max-w-4xl mx-auto p-8 text-gray-8`}>
                 {/* Hero Section */}
                 <header className="text-center mb-16">
                     <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-linear-to-r from-blue-500 to-purple-500 mb-8 shadow-2xl">
                         <FileText className="w-12 h-12 text-white" />
                     </div>
                     <h1 className="text-6xl font-bold mb-6 bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-tight">
-                        About MarkEdit Pro
+                        About Markdown editor
                     </h1>
-                    <p className={`text-xl leading-relaxed max-w-3xl mx-auto text-gray-600 dark:text-gray-300`}>
+                    <p className={`text-xl leading-relaxed max-w-3xl mx-auto text-gray-1`}>
                         A modern, feature-rich markdown editor built with cutting-edge web technologies. Designed for writers, developers, and content creators
                         who demand excellence in their tools.
                     </p>
@@ -142,12 +142,12 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                     >
                         <div className="flex items-center mb-6">
                             <Target className="w-8 h-8 text-blue-500 mr-4" />
-                            <h2 className={`text-3xl font-bold ${isDark ? "text-white" : "text-gray-900"}`}>Our Mission</h2>
+                            <h2 className={`text-3xl font-bold text-gray-7`}>Our Mission</h2>
                         </div>
-                        <div className={`prose prose-lg max-w-none ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+                        <div className={`prose prose-lg max-w-none text-gray-3`}>
                             <p className="mb-4">
                                 We believe that great writing tools should be <strong>beautiful</strong>, <strong>fast</strong>, and <strong>accessible</strong>
-                                . MarkEdit Pro was born from the frustration with existing markdown editors that compromise on either functionality or user
+                                . Markdown editor was born from the frustration with existing markdown editors that compromise on either functionality or user
                                 experience.
                             </p>
                             <p className="mb-4">
@@ -155,7 +155,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                                 elegance that makes markdown so appealing in the first place.
                             </p>
                             <p>
-                                Whether you're writing documentation, blog posts, or taking notes, MarkEdit Pro adapts to your workflow and helps you focus on
+                                Whether you're writing documentation, blog posts, or taking notes, Markdown editor adapts to your workflow and helps you focus on
                                 what matters most: <em>your content</em>.
                             </p>
                         </div>
@@ -164,7 +164,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
 
                 {/* Key Features */}
                 <section className="mb-16">
-                    <h2 className={`text-3xl font-bold mb-8 text-center ${isDark ? "text-white" : "text-gray-900"}`}>Why Choose MarkEdit Pro?</h2>
+                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Why Choose Markdown editor?</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {features.map((feature, index) => (
                             <div
@@ -177,9 +177,9 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                                     <div className="p-3 rounded-lg bg-linear-to-r from-blue-500 to-purple-500 mr-4">
                                         <feature.icon className="w-6 h-6 text-white" />
                                     </div>
-                                    <h3 className={`text-lg font-semibold ${isDark ? "text-white" : "text-gray-900"}`}>{feature.title}</h3>
+                                    <h3 className={`text-lg font-semibold text-gray-7`}>{feature.title}</h3>
                                 </div>
-                                <p className={`${isDark ? "text-gray-300" : "text-gray-600"}`}>{feature.description}</p>
+                                <p className={"text-gray-1"}>{feature.description}</p>
                             </div>
                         ))}
                     </div>
@@ -187,7 +187,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
 
                 {/* Statistics */}
                 <section className="mb-16">
-                    <h2 className={`text-3xl font-bold mb-8 text-center ${isDark ? "text-white" : "text-gray-900"}`}>Built for Performance</h2>
+                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Built for Performance</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {stats.map((stat, index) => (
                             <div
@@ -204,7 +204,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                                 <div className="text-3xl font-bold bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
                                     {stat.number}
                                 </div>
-                                <div className={`text-sm font-medium ${isDark ? "text-gray-400" : "text-gray-600"}`}>{stat.label}</div>
+                                <div className={`text-sm font-medium text-gray-1`}>{stat.label}</div>
                             </div>
                         ))}
                     </div>
@@ -212,7 +212,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
 
                 {/* Technology Stack */}
                 <section className="mb-16">
-                    <h2 className={`text-3xl font-bold mb-8 text-center ${isDark ? "text-white" : "text-gray-900"}`}>Built with Modern Technologies</h2>
+                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Built with Modern Technologies</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {technologies.map((tech, index) => (
                             <div
@@ -223,9 +223,9 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                             >
                                 <div className="flex items-center mb-4">
                                     <div className="text-3xl mr-4">{tech.icon}</div>
-                                    <h3 className={`text-lg font-semibold ${isDark ? "text-white" : "text-gray-900"}`}>{tech.name}</h3>
+                                    <h3 className={`text-lg font-semibold text-gray-7`}>{tech.name}</h3>
                                 </div>
-                                <p className={`text-sm ${isDark ? "text-gray-400" : "text-gray-600"}`}>{tech.description}</p>
+                                <p className={`text-sm text-gray-1`}>{tech.description}</p>
                             </div>
                         ))}
                     </div>
@@ -233,7 +233,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
 
                 {/* Development Roadmap */}
                 <section className="mb-16">
-                    <h2 className={`text-3xl font-bold mb-8 text-center ${isDark ? "text-white" : "text-gray-900"}`}>Development Roadmap</h2>
+                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Development Roadmap</h2>
                     <div className="space-y-6">
                         {roadmap.map((item, index) => (
                             <div
@@ -253,7 +253,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                                 </div>
                                 <div>
                                     <div className="flex items-center mb-2">
-                                        <h3 className={`text-xl font-semibold mr-3 ${isDark ? "text-white" : "text-gray-900"}`}>{item.title}</h3>
+                                        <h3 className={`text-xl font-semibold mr-3 text-gray-7`}>{item.title}</h3>
                                         <span
                                             className={`px-3 py-1 rounded-full text-xs font-medium ${
                                                 item.status === "completed"
@@ -266,7 +266,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                                             {item.status === "completed" ? "Completed" : item.status === "in-progress" ? "In Progress" : "Planned"}
                                         </span>
                                     </div>
-                                    <p className={`${isDark ? "text-gray-300" : "text-gray-600"}`}>{item.description}</p>
+                                    <p className={"text-gray-1"}>{item.description}</p>
                                 </div>
                             </div>
                         ))}
@@ -275,18 +275,18 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
 
                 {/* Philosophy */}
                 <section className="mb-16">
-                    <h2 className={`text-3xl font-bold mb-8 text-center ${isDark ? "text-white" : "text-gray-900"}`}>Our Design Philosophy</h2>
+                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Our Design Philosophy</h2>
                     <div className="grid md:grid-cols-2 gap-8">
                         <div className={`p-8 rounded-xl border ${isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"}`}>
                             <div className="flex items-center mb-6">
                                 <Lightbulb className="w-8 h-8 text-yellow-500 mr-4" />
-                                <h3 className={`text-2xl font-semibold ${isDark ? "text-white" : "text-gray-900"}`}>Simplicity First</h3>
+                                <h3 className={`text-2xl font-semibold text-gray-7`}>Simplicity First</h3>
                             </div>
-                            <p className={`text-lg mb-4 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
-                                We believe that the best tools are invisible. MarkEdit Pro gets out of your way and lets you focus on writing, not fighting with
+                            <p className={`text-lg mb-4 text-gray-1`}>
+                                We believe that the best tools are invisible. Markdown editor gets out of your way and lets you focus on writing, not fighting with
                                 the interface.
                             </p>
-                            <ul className={`space-y-2 ${isDark ? "text-gray-400" : "text-gray-500"}`}>
+                            <ul className={`space-y-2 text-gray-9`}>
                                 <li>• Clean, distraction-free interface</li>
                                 <li>• Intuitive keyboard shortcuts</li>
                                 <li>• Minimal learning curve</li>
@@ -297,13 +297,13 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                         <div className={`p-8 rounded-xl border ${isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"}`}>
                             <div className="flex items-center mb-6">
                                 <Rocket className="w-8 h-8 text-blue-500 mr-4" />
-                                <h3 className={`text-2xl font-semibold ${isDark ? "text-white" : "text-gray-900"}`}>Performance Matters</h3>
+                                <h3 className={`text-2xl font-semibold text-gray-7`}>Performance Matters</h3>
                             </div>
-                            <p className={`text-lg mb-4 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
+                            <p className={`text-lg mb-4 text-gray-1`}>
                                 Every millisecond counts when you're in the flow of writing. We've optimized every aspect of the editor for maximum
                                 responsiveness.
                             </p>
-                            <ul className={`space-y-2 ${isDark ? "text-gray-400" : "text-gray-500"}`}>
+                            <ul className={`space-y-2 text-gray-9`}>
                                 <li>• Real-time preview rendering</li>
                                 <li>• Optimized for large documents</li>
                                 <li>• Smooth animations and transitions</li>
@@ -315,30 +315,30 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
 
                 {/* Team & Credits */}
                 <section className="mb-16">
-                    <h2 className={`text-3xl font-bold mb-8 text-center ${isDark ? "text-white" : "text-gray-900"}`}>Built with ❤️</h2>
+                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Built with ❤️</h2>
                     <div className={`p-8 rounded-xl border text-center ${isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-200"}`}>
                         <div className="flex justify-center mb-6">
                             <div className="p-4 rounded-full bg-linear-to-r from-pink-500 to-red-500">
                                 <Heart className="w-8 h-8 text-white" />
                             </div>
                         </div>
-                        <h3 className={`text-2xl font-semibold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}>Crafted with Passion</h3>
-                        <p className={`text-lg mb-6 max-w-2xl mx-auto ${isDark ? "text-gray-300" : "text-gray-600"}`}>
-                            MarkEdit Pro is developed by passionate developers who believe in creating tools that make a difference in people's daily workflows.
+                        <h3 className={`text-2xl font-semibold mb-4 text-gray-7`}>Crafted with Passion</h3>
+                        <p className={`text-lg mb-6 max-w-2xl mx-auto text-gray-1`}>
+                            Markdown editor is developed by passionate developers who believe in creating tools that make a difference in people's daily workflows.
                             Every feature is carefully considered and implemented with attention to detail.
                         </p>
                         <div className="flex justify-center space-x-6">
                             <div className={`flex items-center px-4 py-2 rounded-lg ${isDark ? "bg-gray-700" : "bg-gray-100"}`}>
                                 <Coffee className="w-5 h-5 mr-2 text-amber-500" />
-                                <span className={`text-sm ${isDark ? "text-gray-300" : "text-gray-700"}`}>Fueled by coffee</span>
+                                <span className={`text-sm text-gray-3`}>Fueled by coffee</span>
                             </div>
                             <div className={`flex items-center px-4 py-2 rounded-lg ${isDark ? "bg-gray-700" : "bg-gray-100"}`}>
                                 <Code className="w-5 h-5 mr-2 text-blue-500" />
-                                <span className={`text-sm ${isDark ? "text-gray-300" : "text-gray-700"}`}>Open source</span>
+                                <span className={`text-sm text-gray-3`}>Open source</span>
                             </div>
                             <div className={`flex items-center px-4 py-2 rounded-lg ${isDark ? "bg-gray-700" : "bg-gray-100"}`}>
                                 <Users className="w-5 h-5 mr-2 text-green-500" />
-                                <span className={`text-sm ${isDark ? "text-gray-300" : "text-gray-700"}`}>Community driven</span>
+                                <span className={`text-sm text-gray-3`}>Community driven</span>
                             </div>
                         </div>
                     </div>
@@ -352,14 +352,14 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                             : "bg-linear-to-r from-blue-50 to-purple-50 border-blue-200"
                     } text-center`}
                 >
-                    <h2 className={`text-3xl font-bold mb-6 ${isDark ? "text-white" : "text-gray-900"}`}>Ready to Transform Your Writing?</h2>
-                    <p className={`text-lg mb-8 max-w-2xl mx-auto ${isDark ? "text-gray-300" : "text-gray-600"}`}>
-                        Join thousands of writers, developers, and content creators who have made MarkEdit Pro their go-to markdown editor. Experience the
+                    <h2 className={`text-3xl font-bold mb-6 text-gray-7`}>Ready to Transform Your Writing?</h2>
+                    <p className={`text-lg mb-8 max-w-2xl mx-auto text-gray-1`}>
+                        Join thousands of writers, developers, and content creators who have made Markdown editor their go-to markdown editor. Experience the
                         difference that thoughtful design and cutting-edge technology can make in your daily workflow.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 mb-8">
                         <div
-                            className={`px-6 py-3 rounded-lg ${isDark ? "bg-gray-800 text-gray-300" : "bg-white text-gray-700"} border ${
+                            className={`px-6 py-3 rounded-lg text-gray-3 ${isDark ? "bg-gray-800" : "bg-white"} border ${
                                 isDark ? "border-gray-700" : "border-gray-200"
                             } shadow-sm`}
                         >
@@ -367,7 +367,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                             <span className="font-semibold">Production Ready</span>
                         </div>
                         <div
-                            className={`px-6 py-3 rounded-lg ${isDark ? "bg-gray-800 text-gray-300" : "bg-white text-gray-700"} border ${
+                            className={`px-6 py-3 rounded-lg text-gray-3 ${isDark ? "bg-gray-800" : "bg-white"} border ${
                                 isDark ? "border-gray-700" : "border-gray-200"
                             } shadow-sm`}
                         >
@@ -375,7 +375,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                             <span className="font-semibold">Privacy Focused</span>
                         </div>
                         <div
-                            className={`px-6 py-3 rounded-lg ${isDark ? "bg-gray-800 text-gray-300" : "bg-white text-gray-700"} border ${
+                            className={`px-6 py-3 rounded-lg text-gray-3 ${isDark ? "bg-gray-800" : "bg-white"} border ${
                                 isDark ? "border-gray-700" : "border-gray-200"
                             } shadow-sm`}
                         >
@@ -383,7 +383,7 @@ const About: React.FC<AboutProps> = ({ isDark, isFullscreen }) => {
                             <span className="font-semibold">Always Free</span>
                         </div>
                     </div>
-                    <div className={`text-sm ${isDark ? "text-gray-400" : "text-gray-500"}`}>💡 Start writing your next masterpiece today!</div>
+                    <div className={`text-sm text-gray-9`}>💡 Start writing your next masterpiece today!</div>
                 </section>
             </article>
         </div>

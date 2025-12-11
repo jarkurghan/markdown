@@ -114,8 +114,8 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, currentPage }) =
                             <>
                                 <button
                                     onClick={uploadFile}
-                                    className={`p-2 rounded-lg ${
-                                        isDark ? "hover:bg-gray-700 text-gray-300 hover:text-white" : "hover:bg-gray-100 text-gray-600 hover:text-gray-900"
+                                    className={`p-2 rounded-lg text-gray-1 text-gray-6 ${
+                                        isDark ? "hover:bg-gray-700" : "hover:bg-gray-100"
                                     } transition-all duration-200`}
                                     title="Upload file"
                                 >
@@ -124,8 +124,8 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, currentPage }) =
 
                                 <button
                                     onClick={downloadMarkdown}
-                                    className={`p-2 rounded-lg ${
-                                        isDark ? "hover:bg-gray-700 text-gray-300 hover:text-white" : "hover:bg-gray-100 text-gray-600 hover:text-gray-900"
+                                    className={`p-2 rounded-lg text-gray-1 text-gray-6 ${
+                                        isDark ? "hover:bg-gray-700" : "hover:bg-gray-100"
                                     } transition-all duration-200`}
                                     title="Download markdown"
                                 >
@@ -137,9 +137,7 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, currentPage }) =
                                     className={`p-2 rounded-lg transition-all duration-200 ${
                                         isToolbarOpen
                                             ? "bg-blue-500 text-white"
-                                            : isDark
-                                            ? "hover:bg-gray-700 text-gray-300 hover:text-white"
-                                            : "hover:bg-gray-100 text-gray-600 hover:text-gray-900"
+                                            : "text-gray-1 text-gray-6 " + (isDark ? "hover:bg-gray-700" : "hover:bg-gray-100")
                                     }`}
                                     title="Formatting Tools"
                                 >
@@ -152,10 +150,10 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, currentPage }) =
                             onClick={handleSidebarToggle}
                             className={`p-2 rounded-lg transition-all duration-200 ${
                                 isSidebarOpen
-                                    ? "bg-blue-500 text-white"
-                                    : isDark
-                                    ? "hover:bg-gray-700 text-gray-300 hover:text-white"
-                                    : "hover:bg-gray-100 text-gray-600 hover:text-gray-900"
+                                    ? "bg-blue-500 text-white text-gray-1 "
+                                    : ("text-gray-6 "+(isDark
+                                    ? "hover:bg-gray-700"
+                                    : "hover:bg-gray-100"))
                             }`}
                             title="Menu"
                         >
@@ -172,11 +170,11 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, currentPage }) =
                     } ${isDark ? "bg-gray-800" : "bg-white"} border-l ${isDark ? "border-gray-700" : "border-gray-200"} shadow-2xl flex flex-col`}
                 >
                     <div className={`flex items-center justify-between p-4 border-b ${isDark ? "border-gray-700" : "border-gray-200"} shrink-0`}>
-                          <h2 className={`text-base font-semibold ${isDark ? "text-white" : "text-gray-900"}`}>Formatting Tools </h2> 
+                          <h2 className={`text-base font-semibold text-gray-7`}>Formatting Tools </h2> 
                         <button
                             onClick={() => setIsToolbarOpen(false)}
-                            className={`p-1.5 rounded-lg ${
-                                isDark ? "hover:bg-gray-700 text-gray-300 hover:text-white" : "hover:bg-gray-100 text-gray-600 hover:text-gray-900"
+                            className={`p-1.5 rounded-lg text-gray-1 text-gray-6 ${
+                                isDark ? "hover:bg-gray-700" : "hover:bg-gray-100"
                             } transition-all duration-200`}
                         >
                             <X className="w-4 h-4" />
@@ -191,8 +189,8 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, currentPage }) =
                                     item.action();
                                     setIsToolbarOpen(false);
                                 }}
-                                className={`w-full flex items-center space-x-2 p-2 rounded-lg ${
-                                    isDark ? "hover:bg-gray-700 text-gray-300 hover:text-white" : "hover:bg-gray-100 text-gray-600 hover:text-gray-900"
+                                className={`w-full flex items-center space-x-2 p-2 rounded-lg text-gray-1 text-gray-6 ${
+                                    isDark ? "hover:bg-gray-700" : "hover:bg-gray-100"
                                 } transition-all duration-200 text-left text-sm`}
                                 title={item.title}
                             >
@@ -210,11 +208,11 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, currentPage }) =
                 } ${isDark ? "bg-gray-800" : "bg-white"} border-l ${isDark ? "border-gray-700" : "border-gray-200"} shadow-2xl flex flex-col`}
             >
                 <div className={`flex items-center justify-between p-4 border-b ${isDark ? "border-gray-700" : "border-gray-200"} shrink-0`}>
-                    <h2 className={`text-base font-semibold ${isDark ? "text-white" : "text-gray-900"}`}>Menu </h2>
+                    <h2 className={`text-base font-semibold text-gray-7`}>Menu </h2>
                     <button
                         onClick={() => setIsSidebarOpen(false)}
-                        className={`p-1.5 rounded-lg ${
-                            isDark ? "hover:bg-gray-700 text-gray-300 hover:text-white" : "hover:bg-gray-100 text-gray-600 hover:text-gray-900"
+                        className={`p-1.5 rounded-lg text-gray-1 text-gray-6 ${
+                            isDark ? "hover:bg-gray-700" : "hover:bg-gray-100"
                         } transition-all duration-200`}
                     >
                         <X className="w-4 h-4" />
@@ -226,8 +224,8 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, currentPage }) =
                         {currentPage !== "editor" && (
                             <button
                                 onClick={navigateToEditor}
-                                className={`w-full flex items-center space-x-2 p-2 rounded-lg ${
-                                    isDark ? "hover:bg-gray-700 text-gray-300 hover:text-white" : "hover:bg-gray-100 text-gray-600 hover:text-gray-900"
+                                className={`w-full flex items-center space-x-2 p-2 rounded-lg text-gray-1 text-gray-6 ${
+                                    isDark ? "hover:bg-gray-700" : "hover:bg-gray-100"
                                 } transition-all duration-200 text-left text-sm`}
                             >
                                 <Home className="w-4 h-4" />
@@ -238,8 +236,8 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, currentPage }) =
                         {currentPage !== "what-is-markdown" && (
                             <button
                                 onClick={navigateToWhatIsMarkdown}
-                                className={`w-full flex items-center space-x-2 p-2 rounded-lg ${
-                                    isDark ? "hover:bg-gray-700 text-gray-300 hover:text-white" : "hover:bg-gray-100 text-gray-600 hover:text-gray-900"
+                                className={`w-full flex items-center space-x-2 p-2 rounded-lg text-gray-1 text-gray-6 ${
+                                    isDark ? "hover:bg-gray-700" : "hover:bg-gray-100"
                                 } transition-all duration-200 text-left text-sm`}
                             >
                                 <HelpCircle className="w-4 h-4" />
@@ -250,8 +248,8 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, currentPage }) =
                         {currentPage !== "about" && (
                             <button
                                 onClick={navigateToAbout}
-                                className={`w-full flex items-center space-x-2 p-2 rounded-lg ${
-                                    isDark ? "hover:bg-gray-700 text-gray-300 hover:text-white" : "hover:bg-gray-100 text-gray-600 hover:text-gray-900"
+                                className={`w-full flex items-center space-x-2 p-2 rounded-lg text-gray-1 text-gray-6 ${
+                                    isDark ? "hover:bg-gray-700" : "hover:bg-gray-100"
                                 } transition-all duration-200 text-left text-sm`}
                             >
                                 <Info className="w-4 h-4" />
@@ -267,8 +265,8 @@ const Header: React.FC<HeaderProps> = ({ isDark, onToggleTheme, currentPage }) =
                                 onToggleTheme();
                                 setIsSidebarOpen(false);
                             }}
-                            className={`w-full flex items-center space-x-2 p-2 rounded-lg ${
-                                isDark ? "hover:bg-gray-700 text-gray-300 hover:text-white" : "hover:bg-gray-100 text-gray-600 hover:text-gray-900"
+                            className={`w-full flex items-center space-x-2 p-2 rounded-lg text-gray-1 text-gray-6 ${
+                                isDark ? "hover:bg-gray-700" : "hover:bg-gray-100"
                             } transition-all duration-200 text-left text-sm`}
                         >
                             {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}  <span>{isDark ? "Light Theme" : "Dark Theme"}</span>
