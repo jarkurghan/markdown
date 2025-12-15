@@ -10,8 +10,6 @@ const Preview: React.FC<PreviewProps> = ({ markdown }) => {
         marked.setOptions({
             breaks: true,
             gfm: true,
-            // headerIds: true,
-            // headerPrefix: 'heading-',
         });
 
         return marked(markdown);

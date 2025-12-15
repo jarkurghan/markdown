@@ -14,8 +14,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     const pathname = usePathname();
 
     const getCurrentPage = () => {
-        if (pathname === "/what-is-markdown") return "what-is-markdown";
-        if (pathname === "/about") return "about";
+        if (pathname === "/en/what-is-markdown") return "what-is-markdown";
+        if (pathname === "/en/about") return "about";
 
         return "editor";
     };

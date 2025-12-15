@@ -71,6 +71,10 @@ body {
         @apply border-l-4 pl-4 py-2 my-4 italic;
     }
 
+    .prose blockquote p {
+        @apply my-0;
+    }
+
     .prose-invert blockquote {
         @apply border-blue-400 bg-gray-800/30;
     }
@@ -79,24 +83,50 @@ body {
         @apply border-blue-600 bg-blue-50;
     }
 
+    .dark .prose blockquote {
+        @apply text-gray-100 bg-gray-700;
+    }
+
     .prose code {
         @apply px-2 py-1 rounded text-sm font-mono;
     }
 
     .prose-invert code {
-        @apply bg-gray-800 text-purple-400;
+        @apply bg-gray-800;
+        /* @apply bg-gray-800 text-purple-400; */
     }
 
     .prose code {
-        @apply bg-gray-100 text-purple-600;
+        @apply bg-gray-100;
+        /* @apply bg-gray-100 text-purple-600; */
+    }
+
+    .dark .prose code {
+        @apply bg-gray-800;
     }
 
     .prose pre {
-        @apply p-4 rounded-lg overflow-x-auto my-4;
+        @apply px-4 py-2 rounded-lg overflow-x-auto my-4 bg-gray-100;
+    }
+
+    .dark .prose pre {
+        @apply bg-gray-800;
     }
 
     .prose pre code {
-        @apply p-0 bg-transparent;
+        @apply p-0 bg-transparent text-gray-900;
+    }
+
+    .dark .prose pre code {
+        @apply text-gray-100;
+    }
+
+    .prose ol {
+        list-style: decimal;
+    }
+
+    .prose ul {
+        list-style: initial;
     }
 
     .prose table {
@@ -218,10 +248,6 @@ body {
     }
     .dark .text-blue-11 {
         @apply text-blue-300;
-    }
-
-    .dark blockquote {
-        @apply text-gray-700 bg-gray-400;
     }
 
     .bg-color-1 {

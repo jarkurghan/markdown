@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { Quote, Code, Image, Heading1, Heading2, Table, Minus, HelpCircle, Home, Info } from "lucide-react";
+import { Quote, Code, Image, Heading1, Heading2, Table, Minus, HelpCircle, Home, Info, Globe } from "lucide-react";
 import { Download, Upload, FileText, Moon, Sun, Menu, X, Bold, Italic, Link, List, ListOrdered } from "lucide-react";
 
 interface HeaderProps {
@@ -15,25 +15,32 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
     const router = useRouter();
     const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
     const [isToolbarOpen, setIsToolbarOpen] = React.useState(false);
+    const [isLangbarOpen, setIsLangbarOpen] = React.useState(false);
 
     const toolbarItems = [
-        { icon: Heading1, action: () => insertMarkdown("# "), title: "Heading 1", label: "Heading 1" },
-        { icon: Heading2, action: () => insertMarkdown("## "), title: "Heading 2", label: "Heading 2" },
-        { icon: Bold, action: () => insertMarkdown("**", "**"), title: "Bold", label: "Bold" },
-        { icon: Italic, action: () => insertMarkdown("*", "*"), title: "Italic", label: "Italic" },
-        { icon: Link, action: () => insertMarkdown("[", "](url)"), title: "Link", label: "Link" },
-        { icon: Image, action: () => insertMarkdown("![alt](", ")"), title: "Image", label: "Image" },
-        { icon: Code, action: () => insertMarkdown("`", "`"), title: "Inline Code", label: "Code" },
-        { icon: Quote, action: () => insertMarkdown("> "), title: "Quote", label: "Quote" },
-        { icon: List, action: () => insertMarkdown("- "), title: "Bullet List", label: "Bullet List" },
-        { icon: ListOrdered, action: () => insertMarkdown("1. "), title: "Numbered List", label: "Numbered List" },
+        { icon: Heading1, action: () => insertMarkdown("# "), title: "Sarlavha 1", label: "Sarlavha 1" },
+        { icon: Heading2, action: () => insertMarkdown("## "), title: "Sarlavha 2", label: "Sarlavha 2" },
+        { icon: Bold, action: () => insertMarkdown("**", "**"), title: "Qalin matn", label: "Qalin" },
+        { icon: Italic, action: () => insertMarkdown("*", "*"), title: "Kursiv matn", label: "Kursiv" },
+        { icon: Link, action: () => insertMarkdown("[", "](url)"), title: "Havola", label: "Havola" },
+        { icon: Image, action: () => insertMarkdown("![alt](", ")"), title: "Rasm", label: "Rasm" },
+        { icon: Code, action: () => insertMarkdown("`", "`"), title: "Inline kod", label: "Kod" },
+        { icon: Quote, action: () => insertMarkdown("> "), title: "Iqtibos", label: "Iqtibos" },
+        { icon: List, action: () => insertMarkdown("- "), title: "Tartiblanmagan ro‘yxat", label: "Ro‘yxat" },
+        { icon: ListOrdered, action: () => insertMarkdown("1. "), title: "Tartiblangan ro‘yxat", label: "Tartiblangan ro‘yxat" },
         {
             icon: Table,
-            action: () => insertMarkdown("| Column 1 | Column 2 |\n|----------|----------|\n| Cell 1 | Cell 2 |"),
-            title: "Table",
-            label: "Table",
+            action: () => insertMarkdown("| Ustun 1 | Ustun 2 |\n|---------|---------|\n| Katakcha 1 | Katakcha 2 |"),
+            title: "Jadval",
+            label: "Jadval",
         },
-        { icon: Minus, action: () => insertMarkdown("\n---\n"), title: "Horizontal Rule", label: "Horizontal Rule" },
+        { icon: Minus, action: () => insertMarkdown("\n---\n"), title: "Gorizontal chiziq", label: "Chiziq" },
+    ];
+
+    const langbarItems = [
+        { icon: "🇺🇿", action: () => router.push("/uz"), title: "O'zbek tili" },
+        { icon: "🇬🇧", action: () => router.push("/en"), title: "English" },
+        { icon: "🇷🇺", action: () => router.push("/ru"), title: "Russian" },
     ];
 
     const insertMarkdown = (before: string, after?: string) => {
@@ -58,34 +65,51 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
         if (isSidebarOpen) {
             setIsSidebarOpen(false);
         }
+        if (isLangbarOpen) {
+            setIsLangbarOpen(false);
+        }
         setIsToolbarOpen(!isToolbarOpen);
+    };
+
+    const handleLangToggle = () => {
+        if (isSidebarOpen) {
+            setIsSidebarOpen(false);
+        }
+        if (isToolbarOpen) {
+            setIsToolbarOpen(false);
+        }
+        setIsLangbarOpen(!isLangbarOpen);
     };
 
     const handleSidebarToggle = () => {
         if (isToolbarOpen) {
             setIsToolbarOpen(false);
         }
+        if (isLangbarOpen) {
+            setIsLangbarOpen(false);
+        }
         setIsSidebarOpen(!isSidebarOpen);
     };
 
     const navigateToWhatIsMarkdown = () => {
-        router.push("/what-is-markdown");
+        router.push("/uz/markdown-ozi-nima");
         setIsSidebarOpen(false);
     };
 
     const navigateToAbout = () => {
-        router.push("/about");
+        router.push("/uz/dastur-haqida");
         setIsSidebarOpen(false);
     };
 
     const navigateToEditor = () => {
-        router.push("/");
+        router.push("/uz");
         setIsSidebarOpen(false);
     };
 
     const navigateToHome = () => {
-        router.push("/");
+        router.push("/uz");
         setIsSidebarOpen(false);
+        setIsLangbarOpen(false);
         setIsToolbarOpen(false);
     };
 
@@ -101,7 +125,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                         </div>
 
                         <h1 className={`text-lg font-bold bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent hidden sm:block`}>
-                            Markdown editor
+                            Markdown muharriri
                         </h1>
                     </button>
 
@@ -111,7 +135,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                                 <button
                                     onClick={uploadFile}
                                     className={`p-2 rounded-lg text-gray-1 text-gray-6 bg-color-8 transition-all duration-200`}
-                                    title="Upload file"
+                                    title="Fayl yuklash"
                                 >
                                     <Upload className="w-5 h-5" />
                                 </button>
@@ -119,7 +143,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                                 <button
                                     onClick={downloadMarkdown}
                                     className={`p-2 rounded-lg text-gray-1 text-gray-6 bg-color-8 transition-all duration-200`}
-                                    title="Download markdown"
+                                    title="Markdownni yuklab olish"
                                 >
                                     <Download className="w-5 h-5" />
                                 </button>
@@ -129,9 +153,19 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                                     className={`p-2 rounded-lg transition-all duration-200 ${
                                         isToolbarOpen ? "bg-blue-500 text-white" : "text-gray-1 text-gray-6 bg-color-8"
                                     }`}
-                                    title="Formatting Tools"
+                                    title="Formatlash vositalari"
                                 >
                                     <Bold className="w-5 h-5" />
+                                </button>
+
+                                <button
+                                    onClick={handleLangToggle}
+                                    className={`p-2 rounded-lg transition-all duration-200 ${
+                                        isLangbarOpen ? "bg-blue-500 text-white" : "text-gray-1 text-gray-6 bg-color-8"
+                                    }`}
+                                    title="Tilni o'zgartirish"
+                                >
+                                    <Globe className="w-5 h-5" />
                                 </button>
                             </>
                         )}
@@ -141,7 +175,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                             className={`p-2 rounded-lg transition-all duration-200 ${
                                 isSidebarOpen ? "bg-blue-500 text-white" : "text-gray-1 text-gray-6 bg-color-8"
                             }`}
-                            title="Menu"
+                            title="Menyu"
                         >
                             <Menu className="w-5 h-5" />
                         </button>
@@ -156,7 +190,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                     } bg-color-2 border-l bor-col-1 shadow-2xl flex flex-col`}
                 >
                     <div className={`flex items-center justify-between p-4 border-b bor-col-1 shrink-0`}>
-                          <h2 className={`text-base font-semibold text-gray-7`}>Formatting Tools </h2> 
+                        <h2 className={`text-base font-semibold text-gray-7`}>Formatlash vositalari</h2>
                         <button
                             onClick={() => setIsToolbarOpen(false)}
                             className={`p-1.5 rounded-lg text-gray-1 text-gray-6 bg-color-8 transition-all duration-200`}
@@ -177,7 +211,42 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                                 title={item.title}
                             >
                                 <item.icon className="w-4 h-4" />
-                                <span>{item.label}</span>
+                                <span>{item.title}</span>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {isEditorPage && (
+                <div
+                    className={`fixed top-0 right-0 h-full w-80 z-50 transform transition-transform duration-300 ease-in-out ${
+                        isLangbarOpen ? "translate-x-0" : "translate-x-full"
+                    } bg-color-2 border-l bor-col-1 shadow-2xl flex flex-col`}
+                >
+                    <div className={`flex items-center justify-between p-4 border-b bor-col-1 shrink-0`}>
+                        <h2 className={`text-base font-semibold text-gray-7`}>Tilni o'zgartirish</h2>
+                        <button
+                            onClick={() => setIsLangbarOpen(false)}
+                            className={`p-1.5 rounded-lg text-gray-1 text-gray-6 bg-color-8 transition-all duration-200`}
+                        >
+                            <X className="w-4 h-4" />
+                        </button>
+                    </div>
+
+                    <div className="p-3 space-y-1 overflow-y-auto flex-1">
+                        {langbarItems.map((item, index) => (
+                            <button
+                                key={index}
+                                onClick={() => {
+                                    item.action();
+                                    setIsLangbarOpen(false);
+                                }}
+                                className={`w-full flex items-center space-x-2 p-2 rounded-lg text-gray-1 text-gray-6 bg-color-8 transition-all duration-200 text-left text-sm`}
+                                title={item.title}
+                            >
+                                <div className="w-4 h-4">{item.icon}</div>
+                                <span>{item.title}</span>
                             </button>
                         ))}
                     </div>
@@ -190,7 +259,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                 } bg-color-2 border-l bor-col-1 shadow-2xl flex flex-col`}
             >
                 <div className={`flex items-center justify-between p-4 border-b bor-col-1 shrink-0`}>
-                    <h2 className={`text-base font-semibold text-gray-7`}>Menu </h2>
+                    <h2 className={`text-base font-semibold text-gray-7`}>Menyu </h2>
                     <button
                         onClick={() => setIsSidebarOpen(false)}
                         className={`p-1.5 rounded-lg text-gray-1 text-gray-6 bg-color-8 transition-all duration-200`}
@@ -207,7 +276,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                                 className={`w-full flex items-center space-x-2 p-2 rounded-lg text-gray-1 text-gray-6 bg-color-8 transition-all duration-200 text-left text-sm`}
                             >
                                 <Home className="w-4 h-4" />
-                                <span>Back to Editor</span>
+                                <span>Muharrirga qaytish</span>
                             </button>
                         )}
 
@@ -217,7 +286,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                                 className={`w-full flex items-center space-x-2 p-2 rounded-lg text-gray-1 text-gray-6 bg-color-8 transition-all duration-200 text-left text-sm`}
                             >
                                 <HelpCircle className="w-4 h-4" />
-                                <span>What is Markdown?</span>
+                                <span>Markdown o'zi nima?</span>
                             </button>
                         )}
 
@@ -227,7 +296,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                                 className={`w-full flex items-center space-x-2 p-2 rounded-lg text-gray-1 text-gray-6 bg-color-8 transition-all duration-200 text-left text-sm`}
                             >
                                 <Info className="w-4 h-4" />
-                                <span>About</span>
+                                <span>Dastur haqida</span>
                             </button>
                         )}
                     </div>
@@ -241,8 +310,8 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                             }}
                             className={`w-full flex items-center space-x-2 p-2 rounded-lg text-gray-1 text-gray-6 bg-color-8 transition-all duration-200 text-left text-sm`}
                         >
-                            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />} {" "}
-                            <span>{theme === "dark" ? "Light Theme" : "Dark Theme"}</span>
+                            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                            <span>{theme === "dark" ? "Kunduzgi rejim" : "Tungi rejim"}</span>
                         </button>
                     </div>
                 </div>
@@ -253,6 +322,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                     className="fixed inset-0 bg-black/50 z-40"
                     onClick={() => {
                         setIsSidebarOpen(false);
+                        setIsLangbarOpen(false);
                         setIsToolbarOpen(false);
                     }}
                 />

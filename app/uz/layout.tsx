@@ -1,8 +1,8 @@
 import MainLayout from "./layout-client";
 
 export const metadata = {
-    title: "Markdown editor",
-    description: "Beautiful, feature-rich online markdown editor with live preview",
+    title: "Markdown muharriri",
+    description: "Chiroyli va funksiyalarga boy, realtime ko‘rib chiqishga mo‘ljallangan onlayn Markdown muharriri",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,6 +1,20 @@
 import React from "react";
-import { FileText, Code, Zap, Heart, Github, Star, Users, Download, Globe, Smartphone } from "lucide-react";
-import { Monitor, Palette, Shield, Clock, Lightbulb, Target, Rocket, Award, Coffee, BookOpen, Settings } from "lucide-react";
+import { Users } from "lucide-react";
+import { Target } from "lucide-react";
+import { FileText } from "lucide-react";
+import { Smartphone } from "lucide-react";
+import { Lightbulb } from "lucide-react";
+import { Download } from "lucide-react";
+import { Settings } from "lucide-react";
+import { Palette } from "lucide-react";
+import { Shield } from "lucide-react";
+import { Rocket } from "lucide-react";
+import { Coffee } from "lucide-react";
+import { Github } from "lucide-react";
+import { Globe } from "lucide-react";
+import { Code } from "lucide-react";
+import { Star } from "lucide-react";
+import { Zap } from "lucide-react";
 
 interface AboutProps {
     isFullscreen: boolean;
@@ -8,6 +22,11 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ isFullscreen }) => {
     const features = [
+        {
+            icon: Shield,
+            title: "Privacy First",
+            description: "All your content stays local - no data sent to external servers",
+        },
         {
             icon: Zap,
             title: "Lightning Fast",
@@ -24,11 +43,6 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
             description: "Works perfectly on desktop, tablet, and mobile devices",
         },
         {
-            icon: Shield,
-            title: "Privacy First",
-            description: "All your content stays local - no data sent to external servers",
-        },
-        {
             icon: Download,
             title: "Import & Export",
             description: "Easily import existing markdown files and export your work",
@@ -42,19 +56,14 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
 
     const technologies = [
         {
-            name: "React 18",
-            description: "Modern React with hooks and concurrent features",
-            icon: "⚛️",
+            name: "Next.js",
+            description: "A modern React framework that runs on both server and client",
+            icon: "▲",
         },
         {
             name: "TypeScript",
             description: "Type-safe development for better code quality",
             icon: "📘",
-        },
-        {
-            name: "Vite",
-            description: "Lightning-fast build tool and development server",
-            icon: "⚡",
         },
         {
             name: "Tailwind CSS",
@@ -70,6 +79,11 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
             name: "Lucide React",
             description: "Beautiful, customizable icon library",
             icon: "🎯",
+        },
+        {
+            name: "Node.js / Bun",
+            description: "High-performance JavaScript runtime with a fast package manager",
+            icon: "⚡",
         },
     ];
 
@@ -97,14 +111,14 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
             description: "Import and export markdown files",
         },
         {
-            status: "in-progress",
+            status: "completed",
             title: "Enhanced Toolbar",
             description: "Advanced formatting tools and shortcuts",
         },
         {
-            status: "planned",
-            title: "Plugin System",
-            description: "Extensible architecture for custom features",
+            status: "in-progress",
+            title: "Multilanguage",
+            description: "Application interface supports more than 10 languages",
         },
         {
             status: "planned",
@@ -132,18 +146,15 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
 
                 {/* Mission Statement */}
                 <section className="mb-16">
-                    <div
-                        className={`p-8 rounded-2xl border special-1 mb-12`}
-                    >
+                    <div className={`p-8 rounded-2xl border special-1 mb-12`}>
                         <div className="flex items-center mb-6">
                             <Target className="w-8 h-8 text-blue-500 mr-4" />
                             <h2 className={`text-3xl font-bold text-gray-7`}>Our Mission</h2>
                         </div>
                         <div className={`prose prose-lg max-w-none text-gray-3`}>
                             <p className="mb-4">
-                                We believe that great writing tools should be <b>beautiful</b>, <b>fast</b>, and <b>accessible</b>
-                                . Markdown editor was born from the frustration with existing markdown editors that compromise on either functionality or user
-                                experience.
+                                We believe that great writing tools should be <b>beautiful</b>, <b>fast</b>, and <b>accessible</b>. Markdown editor was born
+                                from the frustration with existing markdown editors that compromise on either functionality or user experience.
                             </p>
                             <p className="mb-4">
                                 Our goal is to create the most intuitive and powerful markdown editing experience possible, while maintaining the simplicity and
@@ -159,7 +170,6 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
 
                 {/* Key Features */}
                 <section className="mb-16">
-                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Why Choose Markdown editor?</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {features.map((feature, index) => (
                             <div
@@ -298,17 +308,11 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
                 <section className="mb-16">
                     <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Built with ❤️</h2>
                     <div className={`p-8 rounded-xl border text-center bg-color-3 bor-col-1`}>
-                        <div className="flex justify-center mb-6">
-                            <div className="p-4 rounded-full bg-linear-to-r from-pink-500 to-red-500">
-                                <Heart className="w-8 h-8 text-white" />
-                            </div>
-                        </div>
-                        <h3 className={`text-2xl font-semibold mb-4 text-gray-7`}>Crafted with Passion</h3>
                         <p className={`text-lg mb-6 max-w-2xl mx-auto text-gray-1`}>
-                            Markdown editor is developed by passionate developers who believe in creating tools that make a difference in people's daily
-                            workflows. Every feature is carefully considered and implemented with attention to detail.
+                            We thought about every detail when creating this editor. Thanks to a thoughtful design and cutting-edge technology, your writing
+                            will become much easier and faster. Experience how it will bring convenience to your workflow!
                         </p>
-                        <div className="flex justify-center space-x-6">
+                        <div className="flex justify-center space-x-6 mb-4">
                             <div className={`flex items-center px-4 py-2 rounded-lg bg-color-7`}>
                                 <Coffee className="w-5 h-5 mr-2 text-amber-500" />
                                 <span className={`text-sm text-gray-3`}>Fueled by coffee</span>
@@ -322,33 +326,17 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
                                 <span className={`text-sm text-gray-3`}>Community driven</span>
                             </div>
                         </div>
-                    </div>
-                </section>
-
-                {/* Call to Action */}
-                <section
-                    className={`p-8 rounded-2xl border special-1 text-center`}
-                >
-                    <h2 className={`text-3xl font-bold mb-6 text-gray-7`}>Ready to Transform Your Writing?</h2>
-                    <p className={`text-lg mb-8 max-w-2xl mx-auto text-gray-1`}>
-                        Join thousands of writers, developers, and content creators who have made Markdown editor their go-to markdown editor. Experience the
-                        difference that thoughtful design and cutting-edge technology can make in your daily workflow.
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-4 mb-8">
-                        <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
-                            <Award className="w-5 h-5 inline mr-2 text-yellow-500" />
-                            <span className="font-semibold">Production Ready</span>
-                        </div>
-                        <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
-                            <Shield className="w-5 h-5 inline mr-2 text-green-500" />
-                            <span className="font-semibold">Privacy Focused</span>
-                        </div>
-                        <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
-                            <Star className="w-5 h-5 inline mr-2 text-purple-500" />
-                            <span className="font-semibold">Always Free</span>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
+                                <Star className="w-5 h-5 inline mr-2 text-purple-500" />
+                                <span className="font-semibold">Always Free</span>
+                            </div>
+                            <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
+                                <Shield className="w-5 h-5 inline mr-2 text-green-500" />
+                                <span className="font-semibold">Privacy Focused</span>
+                            </div>
                         </div>
                     </div>
-                    <div className={`text-sm text-gray-9`}>💡 Start writing your next masterpiece today!</div>
                 </section>
             </article>
         </div>

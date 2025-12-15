@@ -3,50 +3,28 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 
 import Editor from "./editor";
-import Preview from "./preview";
 import { Edit3, Eye } from "lucide-react";
+import Preview from "./preview";
 
-const INITIAL_MARKDOWN = `# Welcome to Markdown editor
+const INITIAL_MARKDOWN = `# Markdown muharriri
 
-A **beautiful** and *powerful* markdown editor built with React and TypeScript.
+Realtime onlayn Markdown muharririga xush kelibsiz.
 
-## Features
+> 📱 Moslashuvchan dizayn
+> 🌙 Kunduzgi va tungi rejim
+> ✨ Real vaqt rejimidagi ko‘rib chiqish
+> 💾 Avtomatik saqlash funksiyasi
+> 🎨 Formatlash vositalari
 
-- ✨ Live preview
-- 🎨 Beautiful syntax highlighting
-- 💾 Auto-save functionality
-- 📱 Responsive design
-- ⌨️ Keyboard shortcuts
-- 🌙 Dark theme
+## Boshlash
 
-## Getting Started
+Markdown matningizni tahrir oynasiga yozishni boshlang. Natija real vaqt rejimida yangilanadi!
 
-Start typing your markdown in the editor panel. The preview will update in real-time!
-
-### Code Example
-
-\`\`\`javascript
-function hello() {
-  console.log("Hello, Markdown editor!");
-}
-\`\`\`
-
-### Links and Images
-
-[Visit GitHub](https://github.com)
-
-> This is a blockquote. Perfect for highlighting important information.
-
-### Lists
-
-1. First item
-2. Second item
-   - Nested item
-   - Another nested item
+**Maroqli yozish!** 🚀
 
 ---
+[GitHub sahifasiga o‘tish](https://github.com/jarkurghan/markdown)
 
-**Happy writing!** 🚀
 `;
 
 const EditorContent: React.FC = () => {
@@ -58,9 +36,7 @@ const EditorContent: React.FC = () => {
 
     useEffect(() => {
         const saved = localStorage.getItem("markedit-content");
-        if (saved) {
-            setMarkdown(saved);
-        }
+        if (saved) setMarkdown(saved);
     }, []);
 
     useEffect(() => {
@@ -160,7 +136,7 @@ const EditorContent: React.FC = () => {
                     }`}
                 >
                     <Edit3 className="w-4 h-4 mr-2" />
-                    Editor
+                    Tahrir
                 </button>
                 <button
                     onClick={() => setActiveTab("preview")}
@@ -168,7 +144,7 @@ const EditorContent: React.FC = () => {
                         activeTab === "preview" ? "bg-color-5 special-2" : "text-gray-2 text-gray-10"
                     }`}
                 >
-                    <Eye className="w-4 h-4 mr-2" /> Preview
+                    <Eye className="w-4 h-4 mr-2" /> Ko‘rinish
                 </button>
             </div>
             <div className="md:hidden flex-1 min-h-0 overflow-hidden">

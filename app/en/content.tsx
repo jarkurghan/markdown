@@ -6,47 +6,26 @@ import Editor from "./editor";
 import Preview from "./preview";
 import { Edit3, Eye } from "lucide-react";
 
-const INITIAL_MARKDOWN = `# Welcome to Markdown editor
+const INITIAL_MARKDOWN = `# Markdown editor
 
-A **beautiful** and *powerful* markdown editor built with React and TypeScript.
+Welcome to a **beautiful** and *powerful* markdown editor.
 
-## Features
-
-- ✨ Live preview
-- 🎨 Beautiful syntax highlighting
-- 💾 Auto-save functionality
-- 📱 Responsive design
-- ⌨️ Keyboard shortcuts
-- 🌙 Dark theme
+> 📱 Responsive design
+> 🌙 Light/Dark theme
+> ✨ Live preview
+> 💾 Auto-save functionality
+> 🎨 Formatting tools
 
 ## Getting Started
 
 Start typing your markdown in the editor panel. The preview will update in real-time!
 
-### Code Example
-
-\`\`\`javascript
-function hello() {
-  console.log("Hello, Markdown editor!");
-}
-\`\`\`
-
-### Links and Images
-
-[Visit GitHub](https://github.com)
-
-> This is a blockquote. Perfect for highlighting important information.
-
-### Lists
-
-1. First item
-2. Second item
-   - Nested item
-   - Another nested item
+**Happy writing!** 🚀
 
 ---
 
-**Happy writing!** 🚀
+[Visit GitHub](https://github.com/jarkurghan/markdown)
+
 `;
 
 const EditorContent: React.FC = () => {

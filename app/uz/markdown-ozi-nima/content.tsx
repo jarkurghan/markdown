@@ -1,6 +1,22 @@
 import React from "react";
-import { Zap, Globe, Users, BookOpen, Lightbulb, Target, Clock, Star } from "lucide-react";
-import { FileText, Code, Bold, Italic, Link, List, Image, Quote, Hash, Table, CheckSquare } from "lucide-react";
+import { FileText } from "lucide-react";
+import { BookOpen } from "lucide-react";
+import { CheckSquare } from "lucide-react";
+import { Lightbulb } from "lucide-react";
+import { Target } from "lucide-react";
+import { Quote } from "lucide-react";
+import { Clock } from "lucide-react";
+import { Table } from "lucide-react";
+import { Users } from "lucide-react";
+import { Globe } from "lucide-react";
+import { Image } from "lucide-react";
+import { Link } from "lucide-react";
+import { Bold } from "lucide-react";
+import { Code } from "lucide-react";
+import { Star } from "lucide-react";
+import { List } from "lucide-react";
+import { Hash } from "lucide-react";
+import { Zap } from "lucide-react";
 
 interface WhatIsMarkdownProps {
     isFullscreen: boolean;
@@ -167,15 +183,12 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isFullscreen }) => 
 
                 {/* Introduction */}
                 <section className="mb-16">
-                    <div
-                        className={`p-8 rounded-2xl border special-1 mb-12`}
-                    >
+                    <div className={`p-8 rounded-2xl border special-1 mb-12`}>
                         <h2 className={`text-3xl font-bold mb-6 text-gray-7`}>The Story Behind Markdown</h2>
                         <div className={`prose prose-lg max-w-none text-gray-3`}>
                             <p className="mb-4">
-                                Markdown was created in 2004 by <b>John Gruber</b> in collaboration with Aaron Swartz. The goal was simple yet
-                                revolutionary: create a way to write using an easy-to-read, easy-to-write plain text format that could be converted to
-                                structurally valid HTML.
+                                Markdown was created in 2004 by <b>John Gruber</b> in collaboration with Aaron Swartz. The goal was simple yet revolutionary:
+                                create a way to write using an easy-to-read, easy-to-write plain text format that could be converted to structurally valid HTML.
                             </p>
                             <p className="mb-4">
                                 The name "Markdown" is a play on the word "markup," referencing how it allows you to mark up text with formatting in a way that
@@ -275,9 +288,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isFullscreen }) => 
                                     <h3 className={`text-xl font-semibold text-gray-7`}>{example.title}</h3>
                                 </div>
                                 <p className={`text-sm mb-4 text-gray-1`}>{example.description}</p>
-                                <div
-                                    className={`p-4 rounded-lg font-mono text-sm overflow-x-auto text-gray-4 bg-color-6 border bor-col-1`}
-                                >
+                                <div className={`p-4 rounded-lg font-mono text-sm overflow-x-auto text-gray-4 bg-color-6 border bor-col-1`}>
                                     <pre className="whitespace-pre-wrap">{example.markdown}</pre>
                                 </div>
                             </div>
@@ -332,11 +343,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isFullscreen }) => 
                             { name: "Hugo", description: "Fast static site generator", category: "Generator" },
                         ].map((tool, index) => (
                             <div key={index} className={`p-6 rounded-xl border bg-color-3 bor-col-1 hover:shadow-lg transition-all duration-300`}>
-                                <div
-                                    className={`text-xs font-semibold mb-2 px-2 py-1 rounded-full inline-block bg-color-9 text-blue-11`}
-                                >
-                                    {tool.category}
-                                </div>
+                                <div className={`text-xs font-semibold mb-2 px-2 py-1 rounded-full inline-block bg-color-9 text-blue-11`}>{tool.category}</div>
                                 <h3 className={`text-lg font-semibold mb-2 text-gray-7`}>{tool.name}</h3>
                                 <p className={`text-sm text-gray-1`}>{tool.description}</p>
                             </div>
@@ -345,9 +352,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isFullscreen }) => 
                 </section>
 
                 {/* Call to Action */}
-                <section
-                    className={`p-8 rounded-2xl border special-1 text-center`}
-                >
+                <section className={`p-8 rounded-2xl border special-1 text-center`}>
                     <h2 className={`text-3xl font-bold mb-6 text-gray-7`}>Ready to Start Your Markdown Journey?</h2>
                     <p className={`text-lg mb-8 max-w-2xl mx-auto text-gray-1`}>
                         Now that you understand the power and simplicity of Markdown, it's time to put it into practice. Head back to our editor and start

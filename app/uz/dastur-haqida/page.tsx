@@ -1,18 +1,20 @@
 import React from "react";
-import { FileText, Code, Zap, Heart, Github, Star, Users, Download, Globe, Smartphone } from "lucide-react";
-import {
-    Monitor,
-    Palette,
-    Shield,
-    Clock,
-    Lightbulb,
-    Target,
-    Rocket,
-    Award,
-    Coffee,
-    BookOpen,
-    Settings,
-} from "lucide-react";
+import { Globe } from "lucide-react";
+import { Shield } from "lucide-react";
+import { Smartphone } from "lucide-react";
+import { Lightbulb } from "lucide-react";
+import { Download } from "lucide-react";
+import { FileText } from "lucide-react";
+import { Settings } from "lucide-react";
+import { Palette } from "lucide-react";
+import { Rocket } from "lucide-react";
+import { Target } from "lucide-react";
+import { Github } from "lucide-react";
+import { Award } from "lucide-react";
+import { Users } from "lucide-react";
+import { Star } from "lucide-react";
+import { Code } from "lucide-react";
+import { Zap } from "lucide-react";
 
 interface AboutProps {
     isFullscreen: boolean;
@@ -75,15 +77,20 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
         },
         {
             name: "Lucide React",
-            description: "Chiroyli va sozlanadigan ikonlar to‘plami",
+            description: "Chiroyli va sozlanadigan ikonkalar to‘plami",
             icon: "🎯",
+        },
+        {
+            name: "Node.js / Bun",
+            description: "JavaScript runtime va tezkor package manager",
+            icon: "⚡",
         },
     ];
 
     const stats = [
-        { number: "100%", label: "Open source", icon: Github },
-        { number: "0ms", label: "Server kechikishi yo‘q", icon: Zap },
-        { number: "∞", label: "Fayl hajmi cheklanmagan", icon: FileText },
+        { number: "100%", label: "Ochiq kodli", icon: Github },
+        { number: "0ms", label: "Server kechikishi", icon: Zap },
+        { number: "∞", label: "Fayl hajmi", icon: FileText },
         { number: "24/7", label: "Internetsiz ishlaydi", icon: Globe },
     ];
 
@@ -91,12 +98,12 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
         {
             status: "completed",
             title: "Asosiy muharrir",
-            description: "Jonli ko‘rinish bilan markdown tahrirlash",
+            description: "Real vaqt rejimida ko‘rish bilan markdown tahrirlash",
         },
         {
             status: "completed",
             title: "Mavzular tizimi",
-            description: "Qorong‘i va yorug‘ dizayn qo‘llab-quvvatlanadi",
+            description: "Kunduzgi va tungi dizayn qo‘llab-quvvatlash",
         },
         {
             status: "completed",
@@ -104,14 +111,14 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
             description: "Markdown fayllarni import va eksport qilish",
         },
         {
-            status: "in-progress",
-            title: "Kengaytirilgan asboblar paneli",
-            description: "Qo‘shimcha formatlash va tezkor tugmalar",
+            status: "completed",
+            title: "Kengaytirilgan formatlash vositalari",
+            description: "Qo‘shimcha formatlash uchun tezkor tugmalar",
         },
         {
-            status: "planned",
-            title: "Plaginlar tizimi",
-            description: "Qo‘shimcha imkoniyatlar qo‘shish imkoniyati",
+            status: "in-progress",
+            title: "Ko‘p tilli",
+            description: "Ilova interfeysi 10 dan ortiq tillarni qo‘llab-quvvatlaydi",
         },
         {
             status: "planned",
@@ -129,11 +136,11 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
                         <FileText className="w-12 h-12 text-white" />
                     </div>
                     <h1 className="text-6xl font-bold mb-6 bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent leading-tight">
-                        About Markdown editor
+                        Markdown muharriri haqida
                     </h1>
                     <p className={`text-xl leading-relaxed max-w-3xl mx-auto text-gray-1`}>
-                        A modern, feature-rich markdown editor built with cutting-edge web technologies. Designed for
-                        writers, developers, and content creators who demand excellence in their tools.
+                        Zamonaviy, xususiyatlarga boy markdown muharriri, eng zamonaviy veb-texnologiyalar bilan yaratilgan. Dasturchilar, kontent yaratuvchilar
+                        va siz uchun mo'ljallangan.
                     </p>
                 </header>
 
@@ -142,22 +149,20 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
                     <div className={`p-8 rounded-2xl border special-1 mb-12`}>
                         <div className="flex items-center mb-6">
                             <Target className="w-8 h-8 text-blue-500 mr-4" />
-                            <h2 className={`text-3xl font-bold text-gray-7`}>Our Mission</h2>
+                            <h2 className={`text-3xl font-bold text-gray-7`}>Bizning vazifamiz</h2>
                         </div>
-                        <div className={`prose prose-lg max-w-none text-gray-3`}>
+                        <div className={`prose prose-lg max-w-none text-gray-3 text-justify`}>
                             <p className="mb-4">
-                                We believe that great writing tools should be <b>beautiful</b>, <b>fast</b>, and{" "}
-                                <b>accessible</b>. Markdown editor was born from the frustration with existing markdown
-                                editors that compromise on either functionality or user experience.
+                                Matn muharrirlari chiroyli, tezkor va foydalanishga qulay bo‘lishi kerak. Bu markdown muharriri mavjud markdown muharrirlarining
+                                yo funksionallikni, yo foydalanuvchi tajribasini qurbon qilayotganidan norozilik sababli paydo bo'lgan.
                             </p>
                             <p className="mb-4">
-                                Our goal is to create the most intuitive and powerful markdown editing experience
-                                possible, while maintaining the simplicity and elegance that makes markdown so appealing
-                                in the first place.
+                                Bizning maqsadimiz – markdownni dastlab jozibador qilgan soddalik va nafislikni saqlab qolgan holda, eng intuitiv va kuchli
+                                markdown tahrirlash vositasini yaratishdir.
                             </p>
                             <p>
-                                Whether you're writing documentation, blog posts, or taking notes, Markdown editor
-                                adapts to your workflow and helps you focus on what matters most: <em>your content</em>.
+                                Hoh dokumentatsiya, hoh blog yozuvlari yoki oddiy qaydlar yozayotgan bo'lishingizdan qat’iy nazar, Markdown muharriri sizning
+                                ish oqimingizga moslashadi va eng muhimi: kontentingizga e'tibor qaratishingizga yordam beradi.
                             </p>
                         </div>
                     </div>
@@ -165,7 +170,6 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
 
                 {/* Key Features */}
                 <section className="mb-16">
-                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Why Choose Markdown editor?</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {features.map((feature, index) => (
                             <div
@@ -186,13 +190,10 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
 
                 {/* Statistics */}
                 <section className="mb-16">
-                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Built for Performance</h2>
+                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Qulaylik uchun qilingan</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {stats.map((stat, index) => (
-                            <div
-                                key={index}
-                                className={`p-6 rounded-xl border text-center bg-color-3 bor-col-1 hover:shadow-lg transition-all duration-300`}
-                            >
+                            <div key={index} className={`p-6 rounded-xl border text-center bg-color-3 bor-col-1 hover:shadow-lg transition-all duration-300`}>
                                 <div className="flex justify-center mb-4">
                                     <div className="p-3 rounded-lg bg-linear-to-r from-blue-500 to-purple-500">
                                         <stat.icon className="w-6 h-6 text-white" />
@@ -209,15 +210,10 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
 
                 {/* Technology Stack */}
                 <section className="mb-16">
-                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>
-                        Built with Modern Technologies
-                    </h2>
+                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Zamonaviy texnologiyalar bilan qilingan</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {technologies.map((tech, index) => (
-                            <div
-                                key={index}
-                                className={`p-6 rounded-xl border bg-color-3 bor-col-1 hover:shadow-lg transition-all duration-300`}
-                            >
+                            <div key={index} className={`p-6 rounded-xl border bg-color-3 bor-col-1 hover:shadow-lg transition-all duration-300`}>
                                 <div className="flex items-center mb-4">
                                     <div className="text-3xl mr-4">{tech.icon}</div>
                                     <h3 className={`text-lg font-semibold text-gray-7`}>{tech.name}</h3>
@@ -230,7 +226,7 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
 
                 {/* Development Roadmap */}
                 <section className="mb-16">
-                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Development Roadmap</h2>
+                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Dasturni qurish xaritasi</h2>
                     <div className="space-y-6">
                         {roadmap.map((item, index) => (
                             <div
@@ -240,18 +236,10 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
                                 <div className="shrink-0">
                                     <div
                                         className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm ${
-                                            item.status === "completed"
-                                                ? "bg-green-500"
-                                                : item.status === "in-progress"
-                                                ? "bg-blue-500"
-                                                : "bg-gray-500"
+                                            item.status === "completed" ? "bg-green-500" : item.status === "in-progress" ? "bg-blue-500" : "bg-gray-500"
                                         }`}
                                     >
-                                        {item.status === "completed"
-                                            ? "✓"
-                                            : item.status === "in-progress"
-                                            ? "⚡"
-                                            : "⏳"}
+                                        {item.status === "completed" ? "✓" : item.status === "in-progress" ? "⚡" : "⏳"}
                                     </div>
                                 </div>
                                 <div>
@@ -266,11 +254,7 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
                                                     : "bg-gray-100 text-gray-800"
                                             }`}
                                         >
-                                            {item.status === "completed"
-                                                ? "Completed"
-                                                : item.status === "in-progress"
-                                                ? "In Progress"
-                                                : "Planned"}
+                                            {item.status === "completed" ? "Tugallangan" : item.status === "in-progress" ? "Jarayonda" : "Rejada"}
                                         </span>
                                     </div>
                                     <p className={"text-gray-1"}>{item.description}</p>
@@ -282,39 +266,38 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
 
                 {/* Philosophy */}
                 <section className="mb-16">
-                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Our Design Philosophy</h2>
+                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Dizayn falsafasi</h2>
                     <div className="grid md:grid-cols-2 gap-8">
                         <div className={`p-8 rounded-xl border bg-color-3 bor-col-1`}>
                             <div className="flex items-center mb-6">
                                 <Lightbulb className="w-8 h-8 text-yellow-500 mr-4" />
-                                <h3 className={`text-2xl font-semibold text-gray-7`}>Simplicity First</h3>
+                                <h3 className={`text-2xl font-semibold text-gray-7`}>Soddalik birinchi o'rinda</h3>
                             </div>
                             <p className={`text-lg mb-4 text-gray-1`}>
-                                We believe that the best tools are invisible. Markdown editor gets out of your way and
-                                lets you focus on writing, not fighting with the interface.
+                                Futbolda <b>yaxshi hakam o'yinda ko'rinmaydi</b> degan gap bor. Ushbu markdown muharriri sizga interfeys bilan kurashishga emas,
+                                balki yozishga e'tibor qaratishga imkon beradi.
                             </p>
                             <ul className={`space-y-2 text-gray-9`}>
-                                <li>• Clean, distraction-free interface</li>
-                                <li>• Intuitive keyboard shortcuts</li>
-                                <li>• Minimal learning curve</li>
-                                <li>• Focus on content, not formatting</li>
+                                <li>• Toza va chalg'itmaydigan interfeys</li>
+                                <li>• Minimal o'rganish vaqti</li>
+                                <li>• Kontentga qaratilgan fokus</li>
                             </ul>
                         </div>
 
                         <div className={`p-8 rounded-xl border bg-color-3 bor-col-1`}>
                             <div className="flex items-center mb-6">
                                 <Rocket className="w-8 h-8 text-blue-500 mr-4" />
-                                <h3 className={`text-2xl font-semibold text-gray-7`}>Performance Matters</h3>
+                                <h3 className={`text-2xl font-semibold text-gray-7`}>Ish ustuvorligi</h3>
                             </div>
                             <p className={`text-lg mb-4 text-gray-1`}>
-                                Every millisecond counts when you're in the flow of writing. We've optimized every
-                                aspect of the editor for maximum responsiveness.
+                                Yozish jarayonida bo'lganingizda har bir millisekund muhim. Biz muharrirning har bir jihatini maksimal darajada tezkorlik bilan
+                                optimallashtirdik.
                             </p>
-                            <ul className={`space-y-2 text-gray-9`}>
-                                <li>• Real-time preview rendering</li>
-                                <li>• Optimized for large documents</li>
-                                <li>• Smooth animations and transitions</li>
-                                <li>• Efficient memory usage</li>
+                            <ul className={`space-y-2 text-gray-9 mt-auto`}>
+                                <li>• Real vaqt rejimida ko‘rish</li>
+                                <li>• Katta hujjatlar uchun optimallashtirilgan</li>
+                                <li>• Xotiradan samarali foydalanish</li>
+                                <li>• Intuitiv yorliqlar</li>
                             </ul>
                         </div>
                     </div>
@@ -322,59 +305,37 @@ const About: React.FC<AboutProps> = ({ isFullscreen }) => {
 
                 {/* Team & Credits */}
                 <section className="mb-16">
-                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Built with ❤️</h2>
                     <div className={`p-8 rounded-xl border text-center bg-color-3 bor-col-1`}>
-                        <div className="flex justify-center mb-6">
-                            <div className="p-4 rounded-full bg-linear-to-r from-pink-500 to-red-500">
-                                <Heart className="w-8 h-8 text-white" />
-                            </div>
-                        </div>
-                        <h3 className={`text-2xl font-semibold mb-4 text-gray-7`}>Crafted with Passion</h3>
                         <p className={`text-lg mb-6 max-w-2xl mx-auto text-gray-1`}>
-                            Markdown editor is developed by passionate developers who believe in creating tools that
-                            make a difference in people's daily workflows. Every feature is carefully considered and
-                            implemented with attention to detail.
+                            Biz ushbu muharrirni yaratayotganda, barcha tafsilotlar haqida oʻylab chiqdik. Chuqur oʻylangan dizayn va eng zamonaviy
+                            texnologiyalar tufayli, yozish ishlaringiz ancha osonlashadi va tezlashadi. Ish jarayoningizda qanday qulaylik yaratishini sinab
+                            koʻring!
                         </p>
+                        <div className="flex flex-wrap justify-center gap-4 mb-4">
+                            <div className={`flex items-center px-4 py-2 rounded-lg bg-color-7`}>
+                                <Award className="w-5 h-5 mr-2 text-blue-500" />
+                                <span className={`text-sm text-gray-3`}>Foydalanishga tayyor</span>
+                            </div>
+                            <div className={`flex items-center px-4 py-2 rounded-lg bg-color-7`}>
+                                <Shield className="w-5 h-5 mr-2 text-blue-500" />
+                                <span className={`text-sm text-gray-3`}>Ximoyalangan</span>
+                            </div>
+                            <div className={`flex items-center px-4 py-2 rounded-lg bg-color-7`}>
+                                <Users className="w-5 h-5 mr-2 text-blue-500" />
+                                <span className={`text-sm text-gray-3`}>Foydalanuvchilar boshqaruvida</span>
+                            </div>
+                        </div>
                         <div className="flex justify-center space-x-6">
-                            <div className={`flex items-center px-4 py-2 rounded-lg bg-color-7`}>
-                                <Coffee className="w-5 h-5 mr-2 text-amber-500" />
-                                <span className={`text-sm text-gray-3`}>Fueled by coffee</span>
+                            <div className={`px-6 py-2 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
+                                <Code className="w-5 h-5 inline mr-2 text-amber-500" />
+                                <span className="font-semibold">Ochiq kodli</span>
                             </div>
-                            <div className={`flex items-center px-4 py-2 rounded-lg bg-color-7`}>
-                                <Code className="w-5 h-5 mr-2 text-blue-500" />
-                                <span className={`text-sm text-gray-3`}>Open source</span>
-                            </div>
-                            <div className={`flex items-center px-4 py-2 rounded-lg bg-color-7`}>
-                                <Users className="w-5 h-5 mr-2 text-green-500" />
-                                <span className={`text-sm text-gray-3`}>Community driven</span>
+                            <div className={`px-6 py-2 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
+                                <Star className="w-5 h-5 inline mr-2 text-green-500" />
+                                <span className="font-semibold">Har doim bepul</span>
                             </div>
                         </div>
                     </div>
-                </section>
-
-                {/* Call to Action */}
-                <section className={`p-8 rounded-2xl border special-1 text-center`}>
-                    <h2 className={`text-3xl font-bold mb-6 text-gray-7`}>Ready to Transform Your Writing?</h2>
-                    <p className={`text-lg mb-8 max-w-2xl mx-auto text-gray-1`}>
-                        Join thousands of writers, developers, and content creators who have made Markdown editor their
-                        go-to markdown editor. Experience the difference that thoughtful design and cutting-edge
-                        technology can make in your daily workflow.
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-4 mb-8">
-                        <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
-                            <Award className="w-5 h-5 inline mr-2 text-yellow-500" />
-                            <span className="font-semibold">Production Ready</span>
-                        </div>
-                        <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
-                            <Shield className="w-5 h-5 inline mr-2 text-green-500" />
-                            <span className="font-semibold">Privacy Focused</span>
-                        </div>
-                        <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
-                            <Star className="w-5 h-5 inline mr-2 text-purple-500" />
-                            <span className="font-semibold">Always Free</span>
-                        </div>
-                    </div>
-                    <div className={`text-sm text-gray-9`}>💡 Start writing your next masterpiece today!</div>
                 </section>
             </article>
         </div>

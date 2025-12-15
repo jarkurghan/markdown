@@ -69,22 +69,22 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
     };
 
     const navigateToWhatIsMarkdown = () => {
-        router.push("/what-is-markdown");
+        router.push("/en/what-is-markdown");
         setIsSidebarOpen(false);
     };
 
     const navigateToAbout = () => {
-        router.push("/about");
+        router.push("/en/about");
         setIsSidebarOpen(false);
     };
 
     const navigateToEditor = () => {
-        router.push("/");
+        router.push("/en");
         setIsSidebarOpen(false);
     };
 
     const navigateToHome = () => {
-        router.push("/");
+        router.push("/en");
         setIsSidebarOpen(false);
         setIsToolbarOpen(false);
     };
