@@ -360,19 +360,18 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isFullscreen }) => 
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 mb-8">
                         <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
-                            <span className="font-mono text-sm font-semibold">Ctrl/Cmd + B</span>
+                            <span className="font-mono text-sm font-semibold">Ctrl + B</span>
                             <span className="ml-2">Bold</span>
                         </div>
                         <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
-                            <span className="font-mono text-sm font-semibold">Ctrl/Cmd + I</span>
+                            <span className="font-mono text-sm font-semibold">Ctrl + I</span>
                             <span className="ml-2">Italic</span>
                         </div>
                         <div className={`px-6 py-3 rounded-lg text-gray-3 bg-color-2 border bor-col-1 shadow-sm`}>
-                            <span className="font-mono text-sm font-semibold">Ctrl/Cmd + K</span>
+                            <span className="font-mono text-sm font-semibold">Ctrl + K</span>
                             <span className="ml-2">Link</span>
                         </div>
                     </div>
-                    <div className={`text-sm text-gray-9`}>💡 Pro tip: Use our formatting toolbar for quick access to all Markdown syntax options!</div>
                 </section>
             </article>
         </div>

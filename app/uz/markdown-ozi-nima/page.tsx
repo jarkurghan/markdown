@@ -47,8 +47,8 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isFullscreen }) => 
             title: "Ro'yxatlar va Vazifalar",
             icon: List,
             markdown:
-                "- Tartibsiz element 1\n- Tartibsiz element 2\n  - Ichki element\n\n1. Tartiblangan element 1\n2. Tartiblangan element 2\n\n- [x] Tugallangan vazifa\n- [ ] Tugallanmagan vazifa",
-            description: "Tartiblangan, tartibsiz va ichki joylashgan vazifalar ro'yxatlarini yaratish",
+                "- Tartiblanmagan element 1\n- Tartiblanmagan element 2\n  - Ichki element\n\n1. Tartiblangan element 1\n2. Tartiblangan element 2\n\n- [x] Tugallangan vazifa\n- [ ] Tugallanmagan vazifa",
+            description: "Tartiblangan, tartiblanmagan va ichki joylashgan vazifalar ro'yxatlarini yaratish",
         },
         {
             title: "Rasmlar va Media",
@@ -74,7 +74,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isFullscreen }) => 
             title: "Jadvallar va Ma'lumotlar",
             icon: Table,
             markdown:
-                "| Xususiyat | Markdown | HTML |\n|---------|----------|------|\n| Oddiy | ✅ | ❌ |\n| O'qishli | ✅ | ❌ |\n| Kuchli | ✅ | ✅ |\n\n| Chap | Markaz | O'ng |\n|:-----|:------:|------:|\n| C1 | M1 | O1 |\n| C2 | M2 | O2 |",
+                "| Xususiyat | Markdown | HTML |\n|-----------|----------|------|\n| Oddiy     | ✅      | ❌   |\n| O'qishli  | ✅      | ❌   |\n| Kuchli    | ✅      | ✅   |\n\n| Chap | Markaz | O'ng |\n|:-----|:------:|-----:|\n| C1   |   M1   |   O1 |\n| C2   |   M2   |   O2 |",
             description: "Tekislash opsiyalari bilan tizimli jadvallar yaratish",
         },
     ];
@@ -108,7 +108,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isFullscreen }) => 
         {
             icon: Zap,
             title: "Juda Tez",
-            description: "An'anaviy matn protsessorlariga qaraganda tezroq formatlangan kontent yozing",
+            description: "An'anaviy matn protsessorlariga qaraganda tezroq formatlangan kontent yozish",
         },
         {
             icon: Target,
@@ -127,7 +127,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isFullscreen }) => 
         },
         {
             icon: Code,
-            title: "Versiyani Boshqarishga Mos",
+            title: "Versiya Boshqaruvi",
             description: "Git va boshqa versiyani boshqarish tizimlari bilan mukammal ishlaydi",
         },
         {
@@ -158,8 +158,8 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isFullscreen }) => 
             description: "GitHub Markdownning o'zining kengaytirilgan versiyasini chiqaradi",
         },
         {
-            year: "Hozirgi",
-            event: "Umumiy qabul qilish",
+            year: "Hozir",
+            event: "Ommaviy qabul qilish",
             description: "Butun dunyo bo'ylab millionlab dasturchilar, yozuvchilar va kontent yaratuvchilari tomonidan qo'llaniladi",
         },
     ];
@@ -184,7 +184,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isFullscreen }) => 
                 {/* Kirish */}
                 <section className="mb-16">
                     <div className={`p-8 rounded-2xl border special-1 mb-12`}>
-                        <h2 className={`text-3xl font-bold mb-6 text-gray-7`}>Markdown Ortidagi Hikoya</h2>
+                        <h2 className={`text-3xl font-bold mb-6 text-gray-7`}>Markdown Tarixi</h2>
                         <div className={`prose prose-lg max-w-none text-gray-3`}>
                             <p className="mb-4">
                                 Markdown 2004-yilda <b>John Gruber</b> tomonidan Aaron Swartz bilan hamkorlikda yaratilgan. Maqsad oddiy, ammo inqilobiy edi:
@@ -207,7 +207,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isFullscreen }) => 
 
                 {/* Xronologiya */}
                 <section className="mb-16">
-                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Yillar Bo'ylab Markdown</h2>
+                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Yillar Bo'yicha</h2>
                     <div className="space-y-6">
                         {history.map((item, index) => (
                             <div
@@ -230,7 +230,7 @@ const WhatIsMarkdownPage: React.FC<WhatIsMarkdownProps> = ({ isFullscreen }) => 
 
                 {/* Nima uchun Markdownni tanlash kerak */}
                 <section className="mb-16">
-                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Nima uchun Markdownni tanlash kerak?</h2>
+                    <h2 className={`text-3xl font-bold mb-8 text-center text-gray-7`}>Nima uchun Markdown tanlanadi?</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {advantages.map((advantage, index) => (
                             <div

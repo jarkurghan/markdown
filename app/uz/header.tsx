@@ -40,7 +40,6 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
     const langbarItems = [
         { icon: "🇺🇿", action: () => router.push("/uz"), title: "O'zbek tili" },
         { icon: "🇬🇧", action: () => router.push("/en"), title: "English" },
-        { icon: "🇷🇺", action: () => router.push("/ru"), title: "Russian" },
     ];
 
     const insertMarkdown = (before: string, after?: string) => {
@@ -317,7 +316,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                 </div>
             </div>
 
-            {(isSidebarOpen || isToolbarOpen) && (
+            {(isSidebarOpen || isToolbarOpen || isLangbarOpen) && (
                 <div
                     className="fixed inset-0 bg-black/50 z-40"
                     onClick={() => {

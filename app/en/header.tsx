@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { Quote, Code, Image, Heading1, Heading2, Table, Minus, HelpCircle, Home, Info } from "lucide-react";
+import { Quote, Code, Image, Heading1, Heading2, Table, Minus, HelpCircle, Home, Info, Globe } from "lucide-react";
 import { Download, Upload, FileText, Moon, Sun, Menu, X, Bold, Italic, Link, List, ListOrdered } from "lucide-react";
 
 interface HeaderProps {
@@ -15,6 +15,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
     const router = useRouter();
     const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
     const [isToolbarOpen, setIsToolbarOpen] = React.useState(false);
+    const [isLangbarOpen, setIsLangbarOpen] = React.useState(false);
 
     const toolbarItems = [
         { icon: Heading1, action: () => insertMarkdown("# "), title: "Heading 1", label: "Heading 1" },
@@ -34,6 +35,11 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
             label: "Table",
         },
         { icon: Minus, action: () => insertMarkdown("\n---\n"), title: "Horizontal Rule", label: "Horizontal Rule" },
+    ];
+
+    const langbarItems = [
+        { icon: "🇺🇿", action: () => router.push("/uz"), title: "O'zbek tili" },
+        { icon: "🇬🇧", action: () => router.push("/en"), title: "English" },
     ];
 
     const insertMarkdown = (before: string, after?: string) => {
@@ -58,12 +64,28 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
         if (isSidebarOpen) {
             setIsSidebarOpen(false);
         }
+        if (isLangbarOpen) {
+            setIsLangbarOpen(false);
+        }
         setIsToolbarOpen(!isToolbarOpen);
+    };
+
+    const handleLangToggle = () => {
+        if (isSidebarOpen) {
+            setIsSidebarOpen(false);
+        }
+        if (isToolbarOpen) {
+            setIsToolbarOpen(false);
+        }
+        setIsLangbarOpen(!isLangbarOpen);
     };
 
     const handleSidebarToggle = () => {
         if (isToolbarOpen) {
             setIsToolbarOpen(false);
+        }
+        if (isLangbarOpen) {
+            setIsLangbarOpen(false);
         }
         setIsSidebarOpen(!isSidebarOpen);
     };
@@ -86,6 +108,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
     const navigateToHome = () => {
         router.push("/en");
         setIsSidebarOpen(false);
+        setIsLangbarOpen(false);
         setIsToolbarOpen(false);
     };
 
@@ -133,6 +156,16 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                                 >
                                     <Bold className="w-5 h-5" />
                                 </button>
+
+                                <button
+                                    onClick={handleLangToggle}
+                                    className={`p-2 rounded-lg transition-all duration-200 ${
+                                        isLangbarOpen ? "bg-blue-500 text-white" : "text-gray-1 text-gray-6 bg-color-8"
+                                    }`}
+                                    title="Change language"
+                                >
+                                    <Globe className="w-5 h-5" />
+                                </button>
                             </>
                         )}
 
@@ -177,7 +210,42 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                                 title={item.title}
                             >
                                 <item.icon className="w-4 h-4" />
-                                <span>{item.label}</span>
+                                <span>{item.title}</span>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {isEditorPage && (
+                <div
+                    className={`fixed top-0 right-0 h-full w-80 z-50 transform transition-transform duration-300 ease-in-out ${
+                        isLangbarOpen ? "translate-x-0" : "translate-x-full"
+                    } bg-color-2 border-l bor-col-1 shadow-2xl flex flex-col`}
+                >
+                    <div className={`flex items-center justify-between p-4 border-b bor-col-1 shrink-0`}>
+                        <h2 className={`text-base font-semibold text-gray-7`}>Change language</h2>
+                        <button
+                            onClick={() => setIsLangbarOpen(false)}
+                            className={`p-1.5 rounded-lg text-gray-1 text-gray-6 bg-color-8 transition-all duration-200`}
+                        >
+                            <X className="w-4 h-4" />
+                        </button>
+                    </div>
+
+                    <div className="p-3 space-y-1 overflow-y-auto flex-1">
+                        {langbarItems.map((item, index) => (
+                            <button
+                                key={index}
+                                onClick={() => {
+                                    item.action();
+                                    setIsLangbarOpen(false);
+                                }}
+                                className={`w-full flex items-center space-x-2 p-2 rounded-lg text-gray-1 text-gray-6 bg-color-8 transition-all duration-200 text-left text-sm`}
+                                title={item.title}
+                            >
+                                <div className="w-4 h-4">{item.icon}</div>
+                                <span>{item.title}</span>
                             </button>
                         ))}
                     </div>
@@ -241,18 +309,19 @@ const Header: React.FC<HeaderProps> = ({ onToggleTheme, currentPage, theme }) =>
                             }}
                             className={`w-full flex items-center space-x-2 p-2 rounded-lg text-gray-1 text-gray-6 bg-color-8 transition-all duration-200 text-left text-sm`}
                         >
-                            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />} {" "}
+                            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
                             <span>{theme === "dark" ? "Light Theme" : "Dark Theme"}</span>
                         </button>
                     </div>
                 </div>
             </div>
 
-            {(isSidebarOpen || isToolbarOpen) && (
+            {(isSidebarOpen || isToolbarOpen || isLangbarOpen) && (
                 <div
                     className="fixed inset-0 bg-black/50 z-40"
                     onClick={() => {
                         setIsSidebarOpen(false);
+                        setIsLangbarOpen(false);
                         setIsToolbarOpen(false);
                     }}
                 />
