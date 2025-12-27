@@ -2,11 +2,7 @@
 
 Realtime onlayn Markdown muharririga xush kelibsiz.
 
-> 📱 Moslashuvchan dizayn
-> 🌙 Kunduzgi va tungi rejim
-> ✨ Real vaqt rejimidagi ko‘rib chiqish
-> 💾 Avtomatik saqlash funksiyasi
-> 🎨 Formatlash vositalari
+✓ 📱 Moslashuvchan dizayn <br />✓ 🌙 Kunduzgi va tungi rejim <br />✓ ✨ Real vaqt rejimidagi ko‘rib chiqish <br />✓ 💾 Avtomatik saqlash funksiyasi <br />✓ 🎨 Formatlash vositalari <br />
 
 ## Boshlash
 
