@@ -1,5 +1,7 @@
 # Markdown muharriri
 
+🇺🇿 O‘zbekcha | [🇬🇧 English](README_EN.md)
+
 Realtime onlayn Markdown muharririga xush kelibsiz.
 
 ✓ 📱 Moslashuvchan dizayn <br />✓ 🌙 Kunduzgi va tungi rejim <br />✓ ✨ Real vaqt rejimidagi ko‘rib chiqish <br />✓ 💾 Avtomatik saqlash funksiyasi <br />✓ 🎨 Formatlash vositalari <br />
